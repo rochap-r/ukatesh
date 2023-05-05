@@ -8,6 +8,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicons/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicons/favicon-16x16.png')}}">
     <link rel="manifest" href="{{asset('assets/favicons/site.webmanifest')}}">
+    @yield('meta')
+    <title>@yield('title', 'Université Technologique Kanyik Tesh') </title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!--Bootstrap Css-->
@@ -36,7 +38,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
     <!--default style-->
     <link rel="stylesheet" href="{{asset('assets/ui/style.css')}}">
-    <title>Université Technologique Kanyik Tesh</title>
+    @stack('custom_css')
 </head>
 <body>
 <!-- Start Preloader Area -->
@@ -93,343 +95,13 @@
 </div>
 <!--End Top Header Area-->
 
-<!-- Start Navbar Area -->
-<div class="navbar-area nav-bg-2">
-    <div class="mobile-responsive-nav">
-        <div class="container">
-            <div class="mobile-responsive-menu">
-                <div class="logo">
-                    <a href="/">
-                        <img src="{{ asset('assets/favicons/logo.png') }}" class="main-logo" alt="logo">
-                        <img src="{{ asset('assets/favicons/logo.png') }}"  class="white-logo" alt="logo">
-                        <span class="label">Ukatesh</span>
-                        <hr class="line-height">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--including navbar-->
+    @include('inc.navbar')
+<!--End navbar-->
 
-    <div class="desktop-nav">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/favicons/logo.png') }}"  class="main-logo" alt="logo">
-                    <img src="{{ asset('assets/favicons/logo.png') }}"  class="white-logo" alt="logo">
-                    <span class="label"> Ukatesh </span>
-                    <hr class="line-height">
-                </a>
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link dropdown-toggle active">
-                                Acceuil
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
-                                A propos d'Ukatesh
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link">En cours de développement</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
-                                Fondation RANK
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link"> Fondation Ruwej A Nkond</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link"> En cours de développement</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
-                                Actualités
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link"> En cours de développement </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">Nous Contacter</a>
-                        </li>
-                    </ul>
-
-                    <div class="others-options">
-                        <div class="icon">
-                            <i class="ri-menu-3-fill" data-bs-toggle="modal" data-bs-target="#sidebarModal"></i>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <div class="others-option-for-responsive">
-        <div class="container">
-            <div class="dot-menu">
-                <div class="inner">
-                    <div class="icon">
-                        <i class="ri-menu-3-fill" data-bs-toggle="modal" data-bs-target="#sidebarModal"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Navbar Area -->
-
-<!-- Sidebar Modal -->
-<div class="sidebarModal modal right fade" id="sidebarModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-bs-dismiss="modal"><i class="ri-close-line"></i></button>
-
-            <div class="modal-body">
-                <a href=" {{ route('home') }}">
-                    <img src="{{ asset('assets/favicons/logo.png')}}" width="50" class="main-logo" alt="logo">
-                    <img src="{{ asset('assets/favicons/logo.png')}}" width="50" class="white-logo" alt="logo">
-                    <span class="label">Ukatesh</span>
-                    <hr class="line-height">
-                </a>
-                <div class="sidebar-content">
-                    <h3>Apropos de nous</h3>
-                    <p>
-                        <b>ukatesh</b>, Université Téchnologique Kanyik Tesh,
-                        est votre point de départ dans l'univers de l'innovation
-                    </p>
-
-                    <div class="sidebar-btn">
-                        <a href="javascript:void(0)" class="default-btn">Entrons En Contact</a>
-                    </div>
-                </div>
-                <div class="sidebar-contact-info">
-                    <h3>Nos Informations de contact</h3>
-
-                    <ul class="info-list">
-                        <li><i class="ri-phone-fill"></i> <a href="tel:+243994589272">+243(0)99-458-9272</a></li>
-
-                        <li><i class="ri-mail-line"></i><a href="mailto:contact@ukatesh.org">contact@ukatesh.org</a></li>
-
-                        <li><i class="ri-map-pin-line"></i>54, Av/Du30/Juin, Q/Latin, KZI </li>
-                    </ul>
-                </div>
-                <ul class="sidebar-social-list">
-                    <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Sidebar Modal -->
-
-<!--Start Banner Area-->
-<div class="banner-area">
-    <div class="hero-slider2 owl-carousel owl-theme">
-        <div class="slider-item banner-bg-4">
-            <div class="container-fluid">
-                <div class="slider-content">
-                    <h1>Ukatesh Infrastructure</h1>
-                    <p>
-                        Nous sommes en cours construction et l'objectif est d'atteindre ce que vous avez en face de vous.
-                    </p>
-                    <a href="javascript:void(0)" class="default-btn btn">Decouvrez plus!<i class="flaticon-next"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="slider-item banner-bg-5">
-            <div class="container-fluid">
-                <div class="slider-content">
-                    <h1>Ukatesh Vision</h1>
-                    <p>
-                        Nous fixons notre vision plus loin pour vous apporter une experience comme jamais vecue!
-                    </p>
-                    <a href="javascript:void(0)" class="default-btn btn">Decouvrez plus! <i class="flaticon-next"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End Banner Area-->
-
-<!--Start Campus Information-->
-<div class="campus-information-area pt-100 pb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6" data-aos="fade-right"
-                 data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
-                <div class="campus-content">
-                    <div class="campus-title">
-                        <h4> Ukatesh Organisation </h4>
-                        <p>
-                            Prière de rester branché car le site est en cours de développement ainsi que l'<b>Université en cours d'implementation</b>.
-                        </p>
-                    </div>
-                    <div class="list">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                    <li>
-                                        <i class="ri-check-fill"></i>
-                                        <p>en cours develop...</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="counter">
-                        <div class="row">
-                            <div class="col-lg-4 col-4">
-                                <div class="counter-card">
-                                    <h1>
-                                        <span class="odometer" data-count="00"> 00</span>
-                                        <span class="target"></span>
-                                    </h1>
-                                    <p> Personnels </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-4">
-                                <div class="counter-card">
-                                    <h1>
-                                        <span class="odometer" data-count="00">00</span>
-                                        <span class="target heading-color"></span><span class="target"></span>
-                                    </h1>
-                                    <p>Etudiants </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-4">
-                                <div class="counter-card">
-                                    <h1>
-                                        <span class="odometer" data-count="00">00</span>
-                                        <span class="target"></span>
-                                    </h1>
-                                    <p>facultés</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" class="default-btn btn">Demarrons la discussion<i class="flaticon-next"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="estemate-form">
-                    <h4>Nous Contacter </h4>
-
-                    <!-- Contact Message start -->
-                    <div class="global-message info d-none"></div>
-                    <!--End Contact Message-->
-                    <form id="contactForm" method="POST" onsubmit="return false" autocomplete="off">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="fullname" class="form-control" required data-error="Please enter your name" placeholder="Votre nom complet">
-                                    <div class="help-block with-errors error text-danger fullname"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control" required data-error="Please enter your email" placeholder="Votre Adresse email">
-                                    <div class="help-block with-errors error text-danger email"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <input type="text" name="subject" class="form-control" placeholder="Votre Sujet">
-                                    <div class="help-block with-errors error text-danger subject"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="saisissez votre message..."></textarea>
-                                    <div class="help-block with-errors error text-danger message"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <button type="submit" id="send-message-btn" class="default-btn">Envoyer le message<span></span></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End Campus Information-->
-
-<!-- coming Soon  -->
-<div id="coming" class=" text-center">
-    <h1 class="">Merci de nous avoir Visité</h1>
-    <p class="text-success">
-        Nous sommes en plein développement de cette plateforme!
-        N'hésitez pas d'y revenir de temps en temps pour voir les mises à jour.
-    </p>
-    <h2>Encours développement.... </h2>
-</div>
-<!--End  coming Soon  -->
+<!---->
+@yield('content')
+<!---->
 
 <!--Start Footer Area-->
 <div class="footer-area pt-100 pb-70">
@@ -645,5 +317,6 @@
         })
     })
 </script>
+@stack('custom_js')
 </body>
 </html>
