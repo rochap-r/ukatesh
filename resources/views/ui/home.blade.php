@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}">
     <!--Responsive css-->
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    <!--default style-->
+    <link rel="stylesheet" href="{{asset('assets/ui/style.css')}}">
     <title>Université Technologique Kanyik Tesh</title>
 </head>
 <body>
@@ -71,16 +73,16 @@
                     <div class="list">
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com" target="_blank"><i class="flaticon-facebook"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.twitter.com" target="_blank"><i class="flaticon-twitter"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/?lang=en" target="_blank"><i class="flaticon-linkedin"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="https://instagram.com/?lang=en" target="_blank"><i class="flaticon-instagram"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -227,59 +229,18 @@
                 </div>
                 <ul class="sidebar-social-list">
                     <li>
-                        <a href="https://www.facebook.com" target="_blank"><i class="flaticon-facebook"></i></a>
+                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.twitter.com" target="_blank"><i class="flaticon-twitter"></i></a>
+                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-twitter"></i></a>
                     </li>
                     <li>
-                        <a href="https://linkedin.com/?lang=en" target="_blank"><i class="flaticon-linkedin"></i></a>
+                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-linkedin"></i></a>
                     </li>
                     <li>
-                        <a href="https://instagram.com/?lang=en" target="_blank"><i class="flaticon-instagram"></i></a>
+                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
                     </li>
                 </ul>
-                <div class="contact-form">
-                    <h3>Prêt à commencer ?</h3>
-
-                    <form id="contactForm">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" required data-error="Please enter your name" placeholder="Votre nom complet">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control" required data-error="Please enter your email" placeholder="Votre Adresse email">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group">
-                                    <input type="text" name="phone_number" class="form-control" required data-error="Please enter your phone number" placeholder="Votre numero de téléphone">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="saisissez votre message..."></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <button type="submit" class="default-btn">Envoyer le message<span></span></button>
-                                <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>
@@ -323,7 +284,7 @@
                  data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
                 <div class="campus-content">
                     <div class="campus-title">
-                        <h2> Ukatesh Organisation </h2>
+                        <h4> Ukatesh Organisation </h4>
                         <p>
                             Gardez votre mal en patience et revenez de temps en temps pour voir les mises.
                             <b>Dans peude temps nous reviendrons.</b>
@@ -409,36 +370,44 @@
             </div>
             <div class="col-lg-6">
                 <div class="estemate-form">
-                    <h3>Entrons en Contact </h3><i>en cours développement...</i>
-                    <form>
+                    <h4>Nous Contacter </h4>
+
+                    <!-- Contact Message start -->
+                    <div class="global-message info d-none"></div>
+                    <!--End Contact Message-->
+                    <form id="contactForm" method="POST" onsubmit="return false" autocomplete="off">
+                        @csrf
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Votre Nom Complet">
+                                    <input type="text" name="fullname" class="form-control" required data-error="Please enter your name" placeholder="Votre nom complet">
+                                    <div class="help-block with-errors error text-danger fullname"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+
+                            <div class="col-lg-12 col-md-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Votre Email">
+                                    <input type="email" name="email" class="form-control" required data-error="Please enter your email" placeholder="Votre Adresse email">
+                                    <div class="help-block with-errors error text-danger email"></div>
                                 </div>
                             </div>
+
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Votre n° Tél">
+                                    <input type="text" name="subject" class="form-control" placeholder="Votre Sujet">
+                                    <div class="help-block with-errors error text-danger subject"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+
+                            <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Votre Sujet">
+                                    <textarea name="message" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="saisissez votre message..."></textarea>
+                                    <div class="help-block with-errors error text-danger message"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" rows="5" placeholder="Votre Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <button type="submit" class="default-btn btn">Envoyer la Réquête<i class="flaticon-paper-plane"></i></button>
+
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" id="send-message-btn" class="default-btn">Envoyer le message<span></span></button>
                             </div>
                         </div>
                     </form>
@@ -453,10 +422,10 @@
 <div id="coming" class=" text-center">
     <h1 class="">Merci de nous avoir Visité</h1>
     <p class="text-success">
-        Nous sommes en plein developpement de cette plateforme!
-        N'hesitez pas d'y revenir de temps en temps pour voir les mises à jour.
+        Nous sommes en plein développement de cette plateforme!
+        N'hésitez pas d'y revenir de temps en temps pour voir les mises à jour.
     </p>
-    <h2>Encours developpement.... </h2>
+    <h2>Encours développement.... </h2>
 </div>
 <!--End  coming Soon  -->
 
@@ -466,7 +435,7 @@
         <div class="row">
             <div class="col-lg-4 col-sm-6">
                 <div class="footer-logo-area">
-                    <a href="index.html">
+                    <a href="{{ route('home') }}">
                         <img src="{{asset('assets/favicons/logo.png')}}" alt="Image">
                         <span class="label" style="font-size:2.8em;">Ukatesh</span>
                         <hr class="line-height">
@@ -617,6 +586,62 @@
         easing: 'linear'
     });
 
+</script>
+<script>
+    let clearData=(parent,elements)=>{
+        elements.forEach(element=>{
+            $(parent).find("[name='"+element+"']").val('');
+
+        })
+    }
+
+    $(document).on('click','#send-message-btn',(e)=>{
+        e.preventDefault()
+        let $this=e.target;
+
+        let crsf_token=$($this).parents("form").find("input[name='_token']").val()
+        let fullname=$($this).parents("form").find("input[name='fullname']").val()
+        let email=$($this).parents("form").find("input[name='email']").val()
+        let subject=$($this).parents("form").find("input[name='subject']").val()
+        let message=$($this).parents("form").find("textarea[name='message']").val()
+        console.log(crsf_token);
+        console.log(message);
+
+
+        let formData= new FormData();
+        formData.append('_token',crsf_token);
+        formData.append('fullname',fullname);
+        formData.append('email',email);
+        formData.append('subject',subject);
+        formData.append('message',message);
+
+        $.ajax({
+            url:"{{ route('contact.store') }}",
+            data:formData,
+            type:'POST',
+            datatype:'JSON',
+            processData:false,
+            contentType:false,
+            success: function (data) {
+                //console.log(data)
+                if(data.success){
+                    $(".global-message").removeClass('d-none');
+                    $(".global-message").addClass('alert alert-info');
+                    $(".global-message").text(data.message);
+                    clearData($($this).parents("form"),['fullname','email','subject','message']);
+                    setTimeout( ()=>{
+                        $('.global-message').fadeOut()
+                    },5000)
+                }
+                else{
+                    for(const error in data.errors)
+                    {
+                        $("div."+error).text(data.errors[error])
+                    }
+                }
+            }
+        })
+    })
 </script>
 </body>
 </html>
