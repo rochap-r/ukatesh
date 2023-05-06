@@ -87,7 +87,7 @@
 
                                     <h4>Informations de Contact</h4>
                                     <p><b>N° Téléphone</b></p>
-                                    <p><a href="tel:+8819906886">+243(0)99-458-9272</a></p>
+                                    <p><a href="tel:+243819002615">+243(0)81-900-2615</a></p>
                                     <p><b>Adresse électronique</b></p>
                                     <p><a href="mailto:contact@ukatesh.org">info@ukatesh.org</a></p>
                                 </div>

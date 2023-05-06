@@ -121,7 +121,7 @@
                     </p>
                     <div class="contact-list">
                         <ul class="d-flex my-1">
-                            <li><a href="tel:+243994589272">+243(0)99-458-9272
+                            <li><a href="tel:+243819002615">+243(0)81-900-2615
                                 </a></li>&nbsp;&nbsp;
                             <li><a href="mailto:contact@ukatesh.org">info@ukatesh.org</a></li>
                         </ul>
