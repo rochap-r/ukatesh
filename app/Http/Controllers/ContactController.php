@@ -52,7 +52,8 @@ class ContactController extends Controller
 
             if(Mail::send('emails.contact-template', $data, function ($message) use ($admin_email, $appName,$subject,$v_email,$v_name) {
                 $message->to($admin_email, $appName)
-                    ->cc('kanyiktesh@ukatesh.org','pierrekanyik@ukatesh.org')
+                    ->cc('kanyiktesh@ukatesh.org')
+                    ->cc('pierrekanyik@ukatesh.org')
                     ->from(env('MAIL_USERNAME'), $appName)
                     ->subject($subject)
                     ->replyTo($v_email, $v_name);
