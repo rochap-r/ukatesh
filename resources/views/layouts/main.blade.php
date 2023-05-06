@@ -123,7 +123,7 @@
                         <ul class="d-flex my-1">
                             <li><a href="tel:+243994589272">+243(0)99-458-9272
                                 </a></li>&nbsp;&nbsp;
-                            <li><a href="mailto:contact@ukatesh.org">contact@ukatesh.org</a></li>
+                            <li><a href="mailto:contact@ukatesh.org">info@ukatesh.org</a></li>
                         </ul>
                     </div>
                 </div>
@@ -189,23 +189,23 @@
                         <ul>
                             <li><span>Nos réseaux sociaux</span></li>
                             <li>
-                                <a href="https://www.facebook.com" target="_blank"><i class="ri-facebook-fill"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="ri-facebook-fill"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="ri-twitter-fill"></i></a>
                             </li>
                             <li>
-                                <a href="https://instagram.com/?lang=en" target="_blank"><i class="ri-instagram-line"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="ri-instagram-line"></i></a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/?lang=en" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                                <a href="javascript:void(0)" target="_blank"><i class="ri-linkedin-fill"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-8">
                     <div class="copy">
-                        <p>© <b>Ukatesh</b>  tous droits réservés, développé par <a href="index.html" target="_blank">Rochap</a></p>
+                        <p>© <b>Ukatesh</b>  tous droits réservés, développé par <a href="javascript:void(0)" target="_blank">Rochap</a></p>
                     </div>
                 </div>
             </div>
@@ -260,62 +260,6 @@
         easing: 'linear'
     });
 
-</script>
-<script>
-    let clearData=(parent,elements)=>{
-        elements.forEach(element=>{
-            $(parent).find("[name='"+element+"']").val('');
-
-        })
-    }
-
-    $(document).on('click','#send-message-btn',(e)=>{
-        e.preventDefault()
-        let $this=e.target;
-
-        let crsf_token=$($this).parents("form").find("input[name='_token']").val()
-        let fullname=$($this).parents("form").find("input[name='fullname']").val()
-        let email=$($this).parents("form").find("input[name='email']").val()
-        let subject=$($this).parents("form").find("input[name='subject']").val()
-        let message=$($this).parents("form").find("textarea[name='message']").val()
-        console.log(crsf_token);
-        console.log(message);
-
-
-        let formData= new FormData();
-        formData.append('_token',crsf_token);
-        formData.append('fullname',fullname);
-        formData.append('email',email);
-        formData.append('subject',subject);
-        formData.append('message',message);
-
-        $.ajax({
-            url:"{{ route('contact.store') }}",
-            data:formData,
-            type:'POST',
-            datatype:'JSON',
-            processData:false,
-            contentType:false,
-            success: function (data) {
-                //console.log(data)
-                if(data.success){
-                    $(".global-message").removeClass('d-none');
-                    $(".global-message").addClass('alert alert-info');
-                    $(".global-message").text(data.message);
-                    clearData($($this).parents("form"),['fullname','email','subject','message']);
-                    setTimeout( ()=>{
-                        $('.global-message').fadeOut()
-                    },5000)
-                }
-                else{
-                    for(const error in data.errors)
-                    {
-                        $("div."+error).text(data.errors[error])
-                    }
-                }
-            }
-        })
-    })
 </script>
 @stack('custom_js')
 </body>

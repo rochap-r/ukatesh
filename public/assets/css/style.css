@@ -72,8 +72,8 @@ body {
 .texte-anime-js {
   white-space: nowrap;
   color: #13BDF0;
-  margin: .8rem auto;
-  font-size: 1.4rem;
+  margin: .5rem auto;
+  font-size: 1.2rem;
 }
 
 .texte-anime-js span, .texte-anime-js p {
@@ -1316,7 +1316,7 @@ Banner Style
 }
 
 .slider-item.banner-bg-2 {
-  background-image: url(../images/banner/banner-img2.jpg);
+  background-image: url(../images/img/bannier1.jpg);
 }
 
 .slider-item.banner-bg-3 {
@@ -5171,7 +5171,7 @@ Page Banner Style
 }
 
 .page-banner-area.bg-2 {
-  background-image: url(../images/page-banner/page-bnner-2.jpg);
+  background-image: url(../images/img/bannier1.jpg);
 }
 
 .page-banner-area .container-fluid {

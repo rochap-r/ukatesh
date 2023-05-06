@@ -299,7 +299,7 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td class="logo" style="text-align: left;">
-                                <h1><a href="#">Message Visiteur</a></h1>
+                                <h1><a href="javascript:void(0)">Message Visiteur</a></h1>
                             </td>
                         </tr>
                     </table>

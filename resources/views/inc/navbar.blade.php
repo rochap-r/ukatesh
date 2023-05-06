@@ -17,7 +17,7 @@
 
     <div class="desktop-nav">
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-md navbar-light">
+            <nav class="navbar navbar-expand-md navbar-light sticky-top">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img src="{{ asset('assets/favicons/logo.png') }}"  class="main-logo" alt="logo">
                     <img src="{{ asset('assets/favicons/logo.png') }}"  class="white-logo" alt="logo">
@@ -72,7 +72,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">Nous Contacter</a>
+                            <a href="{{ route('contact') }}" class="nav-link">Nous Contacter</a>
                         </li>
                     </ul>
 
