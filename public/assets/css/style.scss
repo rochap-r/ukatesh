@@ -227,7 +227,7 @@ Navbar Area Style
             display: none;
         }
     }
-	
+
     &.nav-bg-2 {
         .desktop-nav {
             .navbar-nav {
@@ -417,7 +417,7 @@ Navbar Area Style
                                     top: 0;
                                     opacity: 0;
                                     visibility: hidden;
-        
+
                                     li {
                                         a {
                                             color: #000000;
@@ -434,7 +434,7 @@ Navbar Area Style
                                             li {
                                                 a {
                                                     color: #000000;
-                                                    
+
                                                     &:hover, &:focus, &.active {
                                                         color: $main-color;
                                                     }
@@ -448,7 +448,7 @@ Navbar Area Style
                                                     li {
                                                         a {
                                                             color: #000000;
-                                                            
+
                                                             &:hover, &:focus, &.active {
                                                                 color: $main-color;
                                                             }
@@ -462,7 +462,7 @@ Navbar Area Style
                                                             li {
                                                                 a {
                                                                     color: #000000;
-                                                                    
+
                                                                     &:hover, &:focus, &.active {
 																		color: $main-color;
                                                                     }
@@ -655,7 +655,7 @@ Others Option For Responsive Area Style
         box-shadow: $box-shadow;
         padding: 10px;
         background-color: $white-color;
-        text-align: center;        
+        text-align: center;
         ul {
             margin-bottom: 0;
             padding-left: 0;
@@ -763,7 +763,7 @@ Preloader Style
             margin: -15px;
         }
     }
-  
+
 }
 @keyframes sphereSpin {
     0% {
@@ -788,7 +788,7 @@ Preloader Style
     to {
         transform: rotateX(90deg) rotateZ(360deg);
     }
-} 
+}
 @keyframes rotateDisc3 {
     from {
         transform: rotateY(90deg) rotateZ(0deg);
@@ -1270,7 +1270,7 @@ Banner Style
             }
             &.owl-next {
                 left: 100px;
-                
+
                 i {
                     position: relative;
                     right: -1px;
@@ -1753,7 +1753,7 @@ Academics Style
                 font-size: 24px;
                 color: $white-color;
                 padding: 16px;
-                
+
             }
             &:last-child {
                 margin-bottom: 0;
@@ -2784,7 +2784,7 @@ Campus Life Style
             }
         }
     }
-    
+
 }
 .active {
     &.center {
@@ -3516,7 +3516,7 @@ Events Style
     .events-image {
         margin-bottom: 30px;
     }
-    
+
 }
 .meetings {
     padding-bottom: 15px;
@@ -3572,7 +3572,7 @@ Events Style
                 }
             }
         }
-        
+
     }
     .social-content {
         margin-bottom: 30px;
@@ -4474,10 +4474,10 @@ Page Banner Style
         background: rgba(17, 29, 94, 0.8);
     }
     &.bg-1 {
-        background-image: url(../images/page-banner/page-bnner-1.jpg);
+        background-image: url(../images/img/bannier1.jpg);
     }
     &.bg-2 {
-        background-image: url(../images/page-banner/page-bnner-2.jpg);
+        background-image: url(../images/img/bannier2.jpg);
     }
     .container-fluid {
         max-width: 1520px;
@@ -4879,7 +4879,7 @@ Go To Top Style
 		visibility: visible;
 		right: 3%;
 		top: 93%;
-	} 
+	}
 }
 
 /*
