@@ -129,47 +129,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="estemate-form">
-                        <h4>Nous Contacter </h4>
-
-                        <!-- Contact Message start -->
-                        <div class="global-message info d-none"></div>
-                        <!--End Contact Message-->
-                        <form id="contactForm" method="POST" onsubmit="return false" autocomplete="off">
-                            @csrf
-                            <div class="row">
-                                <div class="col-lg-12 col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="fullname" class="form-control" required data-error="Please enter your name" placeholder="Votre nom complet">
-                                        <div class="help-block with-errors error text-danger fullname"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" required data-error="Please enter your email" placeholder="Votre Adresse email">
-                                        <div class="help-block with-errors error text-danger email"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input type="text" name="subject" class="form-control" placeholder="Votre Sujet">
-                                        <div class="help-block with-errors error text-danger subject"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="saisissez votre message..."></textarea>
-                                        <div class="help-block with-errors error text-danger message"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12">
-                                    <button type="submit" id="send-message-btn" class="default-btn">Envoyer le message<span></span></button>
-                                </div>
-                            </div>
-                        </form>
+                        <h4>En cous developpement...</h4>
                     </div>
                 </div>
             </div>

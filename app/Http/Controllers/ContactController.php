@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
+
+    public function index()
+    {
+        return view('ui.contact');
+
+    }
     public function store()
     {
         $data=array();
@@ -41,12 +47,12 @@ class ContactController extends Controller
             $subject=$attributes['subject'];
             $v_email = $attributes['email'];
             $v_name =  $attributes['fullname'];
-            $admin_email='rochapsoft@gmail.com';
+            $admin_email='info@ukatesh.org';
             $appName=env('APP_NAME');
 
             if(Mail::send('emails.contact-template', $data, function ($message) use ($admin_email, $appName,$subject,$v_email,$v_name) {
                 $message->to($admin_email, $appName)
-                    ->cc('kanyiktesh@gmail.com')
+                    ->cc('kanyiktesh@ukatesh.org','pierrekanyik@ukatesh.org')
                     ->from(env('MAIL_USERNAME'), $appName)
                     ->subject($subject)
                     ->replyTo($v_email, $v_name);
