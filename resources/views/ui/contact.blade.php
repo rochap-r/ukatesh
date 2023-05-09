@@ -1,7 +1,7 @@
 <!--Including main layouts-->
 @extends('layouts.main')
 
-@section('title','Université Technologique Kanyik Tesh')
+@section('title','Nous Contacter')
 @section('meta')
     <!--balise meta ici-->
 @endsection
@@ -14,7 +14,7 @@
             <h1>Contactez-nous</h1>
             <ul>
                 <li><a href="{{ route('home') }}">Accueil</a></li>
-                <li>Contactez-nous</li>
+                <li>Contact</li>
             </ul>
         </div>
     </div>

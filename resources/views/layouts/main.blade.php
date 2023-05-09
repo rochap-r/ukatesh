@@ -136,7 +136,7 @@
                             <li><a href="javascript:void(0)">Accueil</a></li>
                             <li><a href="javascript:void(0)">Nos Contacts</a></li>
                             <li><a href="javascript:void(0)">Qui Sommes-nous?</a></li>
-                            <li><a href="javascript:void(0)">Notre Gallérie</a></li>
+                            <li><a href="javascript:void(0)">Notre Galérie</a></li>
                             <li><a href="javascript:void(0)">Actualités à la une</a></li>
                             <li><a href="javascript:void(0)">Nos Projets</a></li>
                         </ul>
@@ -205,7 +205,9 @@
                 </div>
                 <div class="col-lg-6 col-md-8">
                     <div class="copy">
-                        <p>© <b>Ukatesh</b>  tous droits réservés, développé par <a href="javascript:void(0)" target="_blank">Rochap</a></p>
+                        <p>Copyright &copy; <script> document.write(new Date().getFullYear())</script>
+                            <a href="." class="link-secondary"><b>{{ 'Ukatesh' }}</b></a>.
+                            Tous les droits sont réservés.</p>
                     </div>
                 </div>
             </div>

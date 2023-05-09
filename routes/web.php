@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/contact',[ContactController::class,'index'])->name('contact');
 Route::post('contact',[ContactController::class,'store'])->name('contact.store');
-Route::get('admin',[AdminController::class,'index'])->name('admin');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -29,6 +28,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 /*ADMIN ROUTES */
-Route::prefix('admin.')->name('admin.')->middleware(['auth','check_permissions'])->group(function(){
+Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('index');
 });
