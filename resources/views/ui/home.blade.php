@@ -10,7 +10,7 @@
     <!--Start Banner Area-->
     <div class="banner-area">
         <div class="hero-slider2 owl-carousel owl-theme">
-            <div class="slider-item banner-bg-4">
+            <div class="slider-item banner-bg-1">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Infrastructure</h1>
