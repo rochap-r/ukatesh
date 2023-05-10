@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('extension');
             $table->string('path');
-            $table->foreignId('type_id');
+            $table->foreignId('type_id')->nullable();
             $table->timestamps();
         });
     }

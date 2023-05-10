@@ -69,7 +69,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-columns">
                                 <div class="dropdown-menu-column">
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="{{ route('admin.categories.index') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              class="icon icon-tabler icon-tabler-chevron-right" width="24"
                                              height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -78,18 +78,7 @@
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path d="M9 6l6 6l-6 6"></path>
                                         </svg>
-                                        Les Catégories d'articles
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             class="icon icon-tabler icon-tabler-chevron-right" width="24"
-                                             height="24" viewBox="0 0 24 24" stroke-width="2"
-                                             stroke="currentColor" fill="none" stroke-linecap="round"
-                                             stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path d="M9 6l6 6l-6 6"></path>
-                                        </svg>
-                                        Nouveau Article
+                                        Les Catégories d'Articles
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -99,9 +88,9 @@
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path d="M9 6l6 6l-6 6"></path>
                                         </svg>
-                                        Voir Tous les articles
+                                        Voir Tous les Articles
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="{{ route('admin.evenements.index') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              class="icon icon-tabler icon-tabler-chevron-right" width="24"
                                              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -109,7 +98,7 @@
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path d="M9 6l6 6l-6 6"></path>
                                         </svg>
-                                        Les événements
+                                        Voir Les Evénements
                                     </a>
                                 </div>
                             </div>
@@ -160,6 +149,17 @@
                                             <path d="M9 6l6 6l-6 6"></path>
                                         </svg>
                                         Ajoutez les photos
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('admin.type.index') }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             class="icon icon-tabler icon-tabler-chevron-right" width="24"
+                                             height="24" viewBox="0 0 24 24" stroke-width="2"
+                                             stroke="currentColor" fill="none" stroke-linecap="round"
+                                             stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M9 6l6 6l-6 6"></path>
+                                        </svg>
+                                        Type de photos
                                     </a>
                                 </div>
                             </div>
@@ -236,7 +236,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a  href="javascript:void(0)" class="dropdown-item">
+                            <a  href="{{ route('admin.role.index') }}" class="dropdown-item">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/file-minus -->
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      class="icon icon-tabler icon-tabler-key" width="24"
@@ -249,7 +249,7 @@
                                     </path>
                                     <path d="M15 9h.01"></path>
                                 </svg>
-                                Roles de Membres
+                                Roles des utilisateurs
                             </a>
                             <a href="javascript:void(0)" class="dropdown-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users"
@@ -262,7 +262,7 @@
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                     <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
                                 </svg>
-                                Les Membres
+                                Les Utilisateurs
                             </a>
                         </div>
                     </li>
@@ -301,7 +301,7 @@
                                         </svg>
                                         Paramètres Generaux
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('home') }}">
+                                    <a class="dropdown-item" href="{{ route('home') }}" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              class="icon icon-tabler icon-tabler-receipt-refund" width="24"
                                              height="24" viewBox="0 0 24 24" stroke-width="2"

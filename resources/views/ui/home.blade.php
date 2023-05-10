@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-item banner-bg-5">
+            <div class="slider-item banner-bg-3">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Vision</h1>

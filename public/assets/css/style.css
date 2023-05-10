@@ -1320,7 +1320,7 @@ Banner Style
 }
 
 .slider-item.banner-bg-3 {
-  background-image: url(../images/banner/banner-img3.jpg);
+  background-image: url(../images/img/bannier3.jpg);
 }
 
 .slider-item.banner-bg-4 {
@@ -1328,7 +1328,7 @@ Banner Style
 }
 
 .slider-item.banner-bg-5 {
-  background-image: url(../images/img/bannier2.jpg);
+  background-image: url(../images/img/bannier4.jpg);
 }
 
 .slider-item.banner-bg-6 {
@@ -5172,6 +5172,13 @@ Page Banner Style
 
 .page-banner-area.bg-2 {
   background-image: url(../images/img/bannier2.jpg);
+}
+.page-banner-area.bg-3 {
+  background-image: url(../images/img/bannier3.jpg);
+}
+
+.page-banner-area.bg-4 {
+  background-image: url(../images/img/bannier4.jpg);
 }
 
 .page-banner-area .container-fluid {

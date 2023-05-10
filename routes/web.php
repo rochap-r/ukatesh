@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Administrations\AdminController;
+use App\Http\Controllers\Administrations\CategoryController;
+use App\Http\Controllers\Administrations\EvenementController;
+use App\Http\Controllers\Administrations\RoleController;
+use App\Http\Controllers\Administrations\TypeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -30,4 +34,9 @@ require __DIR__.'/auth.php';
 /*ADMIN ROUTES */
 Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('index');
+    Route::get('/roles',[RoleController::class,'index'])->name('role.index');
+    Route::get('/types',[TypeController::class,'index'])->name('type.index');
+    Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
+    //event admin
+    Route::get('/evenements',[EvenementController::class,'index'])->name('evenements.index');
 });
