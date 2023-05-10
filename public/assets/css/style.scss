@@ -1101,16 +1101,16 @@ Banner Style
     padding-bottom: 200px;
     padding-left: 60px;
     &.banner-bg-1 {
-        background-image: url(../images/banner/banner-img1.jpg);
+        background-image: url(../images/img/bannier1.jpg);
     }
     &.banner-bg-2 {
-        background-image: url(../images/banner/banner-img2.jpg);
+        background-image: url(../images/img/bannier2.jpg);
     }
     &.banner-bg-3 {
-        background-image: url(../images/banner/banner-img3.jpg);
+        background-image: url(../images/img/bannier3.jpg);
     }
     &.banner-bg-4 {
-        background-image: url(../images/banner/banner-img4.jpg);
+        background-image: url(../images/img/bannier4.jpg);
     }
     &.banner-bg-5 {
         background-image: url(../images/banner/banner-img5.jpg);
@@ -4478,6 +4478,12 @@ Page Banner Style
     }
     &.bg-2 {
         background-image: url(../images/img/bannier2.jpg);
+    }
+    &.bg-3 {
+        background-image: url(../images/img/bannier3.jpg);
+    }
+    &.bg-4 {
+        background-image: url(../images/img/bannier4.jpg);
     }
     .container-fluid {
         max-width: 1520px;
