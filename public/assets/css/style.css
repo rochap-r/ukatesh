@@ -1311,7 +1311,7 @@ Banner Style
   padding-left: 60px;
 }
 
-.slider-item.banner-bg-1 {
+/*.slider-item.banner-bg-1 {
   background-image: url(../images/img/bannier1.jpg);
 }
 
@@ -1341,7 +1341,7 @@ Banner Style
 
 .slider-item.banner-bg-8 {
   background-image: url(../images/banner/banner-img8.jpg);
-}
+}*/
 
 .slider-content {
   max-width: 740px;
@@ -5166,7 +5166,7 @@ Page Banner Style
   background: rgba(17, 29, 94, 0.8);
 }
 
-.page-banner-area.bg-1 {
+/*.page-banner-area.bg-1 {
   background-image: url(../images/img/bannier1.jpg);
 }
 
@@ -5179,7 +5179,7 @@ Page Banner Style
 
 .page-banner-area.bg-4 {
   background-image: url(../images/img/bannier4.jpg);
-}
+}*/
 
 .page-banner-area .container-fluid {
   max-width: 1520px;

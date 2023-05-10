@@ -10,23 +10,45 @@
     <!--Start Banner Area-->
     <div class="banner-area">
         <div class="hero-slider2 owl-carousel owl-theme">
-            <div class="slider-item banner-bg-1">
+            <div class="slider-item banner-bg-1" style="background-image:url({{ asset('assets/images/img/bannier1.jpg') }});">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Infrastructure</h1>
                         <p>
-                            Nous sommes en cours construction et l'objectif est d'atteindre ce que vous avez en face de vous.
+                            Nous sommes en cours construction et l'objectif est d'atteindre cette vision.
                         </p>
                         <a href="javascript:void(0)" class="default-btn btn">Decouvrez plus!<i class="flaticon-next"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="slider-item banner-bg-3">
+            <div class="slider-item banner-bg-1" style="background-image:url({{ asset('assets/images/img/bannier3.jpg') }});">
+                <div class="container-fluid">
+                    <div class="slider-content">
+                        <h1>Ukatesh Infrastructure évolution</h1>
+                        <p>
+                            Là ou nous en sommes maintenant avec la construction
+                        </p>
+                        <a href="javascript:void(0)" class="default-btn btn">Decouvrez plus!<i class="flaticon-next"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-item banner-bg-3" style="background-image:url({{ asset('assets/images/img/bannier2.jpg') }});">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Vision</h1>
                         <p>
                             Nous fixons notre vision plus loin pour vous apporter une experience comme jamais vecue!
+                        </p>
+                        <a href="javascript:void(0)" class="default-btn btn">Decouvrez plus! <i class="flaticon-next"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-item banner-bg-3" style="background-image:url({{ asset('assets/images/img/bannier4.jpg') }});">
+                <div class="container-fluid">
+                    <div class="slider-content">
+                        <h1>Ukatesh Vision</h1>
+                        <p>
+                            Lorsque les jalons furent posés sur le projet avec une grande ambition!
                         </p>
                         <a href="javascript:void(0)" class="default-btn btn">Decouvrez plus! <i class="flaticon-next"></i></a>
                     </div>
