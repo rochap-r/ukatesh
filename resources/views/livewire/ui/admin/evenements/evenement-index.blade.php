@@ -36,8 +36,8 @@
                             <h3 class="m-0 mb-1">{{ $event->title }}</h3>
                         </div>
                         <div class="d-flex">
-                            <a href="{{ route('admins.post.edit',$event->slug) }}" class="card-btn">Editer</a>
-                            <a href="" wire:click.prevent="deletePost({{ $event->id }})" class="card-btn">Supprimer</a>
+                            <a href="{{ route('admin.evenements.edit',$event->slug) }}" class="card-btn">Editer</a>
+                            <a href="" wire:click.prevent="deleteEvent({{ $event->id }})" class="card-btn">Supprimer</a>
                         </div>
                     </div>
                 </div>

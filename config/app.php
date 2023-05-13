@@ -159,7 +159,10 @@ return [
         /*
          * Package Service Providers...
          */
-
+        //bibliothèque intervention
+        Intervention\Image\ImageServiceProvider::class,
+        //elfindder
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -182,7 +185,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Image' => \Intervention\Image\Facades\Image::class
     ])->toArray(),
 
 ];

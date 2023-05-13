@@ -38,5 +38,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])
     Route::get('/types',[TypeController::class,'index'])->name('type.index');
     Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
     //event admin
+    Route::post('/evenements.add',[EvenementController::class,'add'])->name('evenements.add');
+    Route::get('/evenements.create',[EvenementController::class,'create'])->name('evenements.create');
+    Route::get('/evenements.edit/{slug}',[EvenementController::class,'edit'])->name('evenements.edit');
+    Route::post('/evenements.update/{event}',[EvenementController::class,'update'])->name('evenements.update');
     Route::get('/evenements',[EvenementController::class,'index'])->name('evenements.index');
 });

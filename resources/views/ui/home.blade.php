@@ -10,7 +10,7 @@
     <!--Start Banner Area-->
     <div class="banner-area">
         <div class="hero-slider2 owl-carousel owl-theme">
-            <div class="slider-item banner-bg-1" style="background-image:url({{ asset('assets/images/img/bannier1.jpg') }});">
+            <div class="slider-item " style="background-image:url({{ asset('assets/images/img/bannier1.jpg') }});">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Infrastructure</h1>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-item banner-bg-1" style="background-image:url({{ asset('assets/images/img/bannier3.jpg') }});">
+            <div class="slider-item" style="background-image:url({{ asset('assets/images/img/bannier3.jpg') }});">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Infrastructure évolution</h1>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-item banner-bg-3" style="background-image:url({{ asset('assets/images/img/bannier2.jpg') }});">
+            <div class="slider-item" style="background-image:url({{ asset('assets/images/img/bannier2.jpg') }});">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Vision</h1>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-item banner-bg-3" style="background-image:url({{ asset('assets/images/img/bannier4.jpg') }});">
+            <div class="slider-item" style="background-image:url({{ asset('assets/images/img/bannier4.jpg') }});">
                 <div class="container-fluid">
                     <div class="slider-content">
                         <h1>Ukatesh Vision</h1>

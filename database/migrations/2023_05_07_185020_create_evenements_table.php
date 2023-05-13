@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('evenements', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
+            $table->string('slug')->nullable()->unique();
             $table->text('content');
             $table->string('lieu')->nullable();
             $table->string('tel')->nullable();
             $table->string('email')->nullable();
+            $table->date('dat_event')->nullable();
 
             $table->foreignId('user_id');
+            $table->boolean('approved')->default(true);
             $table->timestamps();
         });
     }
