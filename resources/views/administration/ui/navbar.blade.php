@@ -80,7 +80,7 @@
                                         </svg>
                                         Les Catégories d'Articles
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="{{ route('admin.posts.index') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              class="icon icon-tabler icon-tabler-chevron-right" width="24"
                                              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -287,7 +287,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-columns">
                                 <div class="dropdown-menu-column">
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="{{ route('admin.settings.index') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              class="icon icon-tabler icon-tabler-settings" width="24"
                                              height="24" viewBox="0 0 24 24" stroke-width="2"

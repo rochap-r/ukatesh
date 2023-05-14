@@ -10,13 +10,7 @@ class Post extends Model
 {
     use Sluggable;
     use HasFactory;
-    protected $fillable=[
-        'title',
-        'slug',
-        'body',
-        'user_id',
-        'category_id'
-    ];
+    protected $fillable=['title','slug','body','approved','user_id','category_id'];
 
     //image relation
     public function image()
@@ -40,8 +34,16 @@ class Post extends Model
     {
         return [
             'slug' => [
-                'source' => 'name'
+                'source' => 'title'
             ]
         ];
+    }
+
+    public function scopeSearch($query,$term)
+    {
+        $term="%$term%";
+        $query->where(function($query) use ($term){
+            $query->where('title','like',$term);
+        });
     }
 }

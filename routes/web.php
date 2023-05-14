@@ -3,6 +3,8 @@
 use App\Http\Controllers\Administrations\AdminController;
 use App\Http\Controllers\Administrations\CategoryController;
 use App\Http\Controllers\Administrations\EvenementController;
+use App\Http\Controllers\Administrations\GenConfigController;
+use App\Http\Controllers\Administrations\PostController;
 use App\Http\Controllers\Administrations\RoleController;
 use App\Http\Controllers\Administrations\TypeController;
 use App\Http\Controllers\ContactController;
@@ -43,4 +45,20 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])
     Route::get('/evenements.edit/{slug}',[EvenementController::class,'edit'])->name('evenements.edit');
     Route::post('/evenements.update/{event}',[EvenementController::class,'update'])->name('evenements.update');
     Route::get('/evenements',[EvenementController::class,'index'])->name('evenements.index');
+
+    //posts admin
+    Route::get('/post.index',[PostController::class,'index'])->name('posts.index');
+    Route::get('/post.create',[PostController::class,'create'])->name('posts.create');
+    Route::post('/post.add',[PostController::class,'add'])->name('posts.add');
+    Route::get('/post.edit/{slug}',[PostController::class,'edit'])->name('posts.edit');
+    Route::post('/post.update/{post}',[PostController::class,'update'])->name('posts.update');
+
+    //Configuration generale
+    Route::get('setting.index',[GenConfigController::class,'index'])->name('settings.index');
+    Route::post('/changeLogo',[GenConfigController::class,'changeLogo'])->name('genConfig.changeLogo');
+    Route::post('/changeBg',[GenConfigController::class,'changeBg'])->name('genConfig.changeBg');
+    Route::post('/changeIcon32',[GenConfigController::class,'changeIcon48'])->name('genConfig.changeIcon48');
+    Route::post('/changeIcon16',[GenConfigController::class,'changeIcon16'])->name('genConfig.changeIcon16');
+    Route::post('/changeAppleIcon',[GenConfigController::class,'changeAppleIcon'])->name('genConfig.changeAppleIcon');
+    Route::get('/categories.index',[CategoryController::class,'index'])->name('categories.index');
 });

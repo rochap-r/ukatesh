@@ -85,7 +85,7 @@
                         <div class="mb-3">
                             <div>
                                 <label class="row">
-                                    <span class="col">Événement Approuvé</span>
+                                    <span class="col {{ $event->approved ? 'text-success':'text-danger' }}">{{ $event->approved ? 'Evénement Approuvé':'Evén non Approuvé' }}</span>
                                     <span class="col-auto">
                                        <label class="form-check form-check-single form-switch">
                                          <input class="form-check-input" {{ $event->approved ? 'checked':'' }} type="checkbox" name="approved">

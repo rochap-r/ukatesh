@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\GenConfig;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
@@ -49,5 +50,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $users=User::factory(1)->create();
+
+        // generation de données configurable
+        GenConfig::factory(1)->create();
     }
 }

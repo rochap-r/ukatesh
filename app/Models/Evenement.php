@@ -11,7 +11,7 @@ class Evenement extends Model
     use Sluggable;
     use HasFactory;
     protected $fillable=[
-        'title', 'slug', 'content', 'lieu', 'tel', 'dat_event','email','user_id'
+        'title', 'slug', 'content', 'lieu','approved', 'tel', 'dat_event','email','user_id'
     ];
 
 

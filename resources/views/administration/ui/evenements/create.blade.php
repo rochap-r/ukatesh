@@ -82,7 +82,7 @@
                             <div class="mb-3">
                                 <div>
                                     <label class="row">
-                                        <span class="col">Événement Approuvé</span>
+                                        <span class="col">Approuvé l'événement</span>
                                         <span class="col-auto">
                                        <label class="form-check form-check-single form-switch">
                                          <input class="form-check-input" type="checkbox" name="approved">

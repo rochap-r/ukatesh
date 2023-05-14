@@ -136,7 +136,7 @@
                             <li><a href="javascript:void(0)">Accueil</a></li>
                             <li><a href="javascript:void(0)">Nos Contacts</a></li>
                             <li><a href="javascript:void(0)">Qui Sommes-nous?</a></li>
-                            <li><a href="javascript:void(0)">Notre Galérie</a></li>
+                            <li><a href="javascript:void(0)">Notre Gallérie</a></li>
                             <li><a href="javascript:void(0)">Actualités à la une</a></li>
                             <li><a href="javascript:void(0)">Nos Projets</a></li>
                         </ul>
