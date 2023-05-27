@@ -52,7 +52,7 @@
                             </div>
                             <div class="mb-2">
                                 <span class="text-danger">
-                                    votre image de logo doit avoir comme dimensions: 120x120
+                                    votre image de logo doit avoir comme dimensions : 120x120
                                 </span>
                             </div>
                             <form action="{{ route('admin.genConfig.changeLogo') }}" method="POST" id="changeLogo">

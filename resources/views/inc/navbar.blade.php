@@ -7,7 +7,7 @@
                     <a href="/">
                         <img src="{{ asset('assets/favicons/logo.png') }}" class="main-logo" alt="logo">
                         <img src="{{ asset('assets/favicons/logo.png') }}"  class="white-logo" alt="logo">
-                        <span class="label">Ukatesh</span>
+                        <span class="label">{{ siteInfos()->sitename }}</span>
                         <hr class="line-height">
                     </a>
                 </div>
@@ -45,30 +45,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
+                            <a href="{{ route('rank.index') }}" class="nav-link">
                                 Fondation RANK
                             </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link"> Fondation Ruwej A Nkond</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link"> En cours de développement</a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
+                            <a href="{{ route('blog.index') }}" class="nav-link ">
                                 Actualités
                             </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link"> En cours de développement </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">

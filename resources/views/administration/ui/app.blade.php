@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicons/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/favicons/favicon-16x16.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ siteInfos()->getAppleIcon18() }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ siteInfos()->getIcon48() }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ siteInfos()->getIcon16() }}">
     <link rel="manifest" href="{{asset('assets/favicons/site.webmanifest')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>@yield('title', 'Ukatesh Administration') </title>
@@ -19,6 +20,7 @@
     <!-- ijabo CSS pour le tostAlert -->
     <link href="{{ asset('administration/ijaboCropTool/ijabo.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('administration/ijaboCropTool/ijaboCropTool.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/ui/preloader.css') }}" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -54,9 +56,19 @@
     </style>
     @stack('style')
 </head>
-<body >
+<body class="loading">
 <script src="{{ asset('administration/dist/js/demo-theme.min.js?1674944402')}}"></script>
-<div class="page">
+<!-- Start Preloader Area -->
+<div class="cssload-loader">
+    Ukatesh.org<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plane-arrival" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.157 11.81l4.83 1.295a2 2 0 1 1 -1.036 3.863l-14.489 -3.882l-1.345 -6.572l2.898 .776l1.414 2.45l2.898 .776l-.12 -7.279l2.898 .777l2.052 7.797z"></path>
+        <path d="M3 21h18"></path>
+    </svg>..
+</div>
+<!-- End Preloader Area -->
+<main>
+    <div class="page">
     <div class="sticky-top">
         @include('administration.ui.header')
         @include('administration.ui.navbar')
@@ -75,6 +87,11 @@
         <!--footer include-->
     </div>
 </div>
+</main>
+
+<!--Preloader -->
+<script src="{{ asset('assets/js/preloader.js') }}"></script>
+
 <!-- ijabo JS et JQ pour le toastAlert -->
 <script src="{{ asset('administration/ijaboCropTool/jquery-3.6.3.min.js') }}"></script>
 <script src="{{ asset('administration/ijaboCropTool/ijabo.min.js') }}"></script>

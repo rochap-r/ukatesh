@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -173,7 +173,9 @@ return [
         App\Providers\RouteServiceProvider::class,
     ])->toArray(),
 
+
     /*
+     *
     |--------------------------------------------------------------------------
     | Class Aliases
     |--------------------------------------------------------------------------
@@ -186,7 +188,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Image' => \Intervention\Image\Facades\Image::class
+        'Image' => \Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 ];

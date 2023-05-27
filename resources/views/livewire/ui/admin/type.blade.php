@@ -70,7 +70,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4"><span class="text-danger">Aucun Role disponible</span></td>
+                                <td colspan="4"><span class="text-danger">Aucun Type d'images n'est disponible</span></td>
                             </tr>
                         @endforelse
                         <tr>
@@ -111,7 +111,7 @@
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
                                     <label for="inputProductTitle" class="form-label">Nom du Type</label>
-                                    <input type="text" name="name"  class="form-control" id="inputProductTitle" placeholder="Tapez le titre du status" wire:model="name">
+                                    <input type="text" name="name"  class="form-control" id="inputProductTitle" placeholder="Tapez le type d'image" wire:model="name">
                                     <span class="text-danger"> @error('name'){{ $message }}@enderror </span>
                                 </div>
                             </div>

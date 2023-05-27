@@ -25,9 +25,9 @@ class GenConfig extends Component
             'adress'=>'required',
         ],[
             'sitename.required'=>'Le nom du site est obligatoire veuillez le saisir!',
-            'phone.required'=>'Le numero du téléphone de l\'ONG est obligatoire veuillez le saisir!',
-            'email.required'=>'L\'email de l\'ONG, est obligatoire veuillez le saisir!',
-            'adress.required'=>'L\'adresse de l\'ONG, est obligatoire veuillez la saisir!',
+            'phone.required'=>'Le numero du téléphone est obligatoire veuillez le saisir!',
+            'email.required'=>'L\'email est obligatoire veuillez le saisir!',
+            'adress.required'=>'L\'adresse physique est obligatoire veuillez la saisir!',
             'email.email'=>'Saisissez une adresse email valide!',
             'description.required'=>'La description du site est obligatoire veuillez le saisir!',
         ]);

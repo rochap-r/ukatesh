@@ -43,9 +43,37 @@
                     <div class="card-body p-2">
                         <h3 class="m-0 mb-1">{{ $post->title }}</h3>
                     </div>
+                    <div class="card-body p-2 text-center">
+
+                                <h3 class="m-0 mb-1">
+                                    @if($post->approved)
+                                        <span class="badge badge-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                               <path d="M5 12l5 5l10 -10"></path>
+                                            </svg>
+                                        </span>
+                                    @else
+                                        <span class="badge badge-danger">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-octagon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                               <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z"></path>
+                                               <path d="M12 8v4"></path>
+                                               <path d="M12 16h.01"></path>
+                                            </svg>
+                                        </span>
+                                    @endif
+
+                                        <span class="badge badge-default">{{ $post->created_at->isoFormat('D')}}-{{ \Str::ucfirst($post->created_at->isoFormat('MMM'))}}
+                                        -{{ $post->created_at->isoFormat('Y')}}</span>
+                                </h3>
+                    </div>
                     <div class="d-flex">
-                        <a href="{{ route('admin.posts.edit',$post->slug) }}" class="card-btn btn-info">Editer</a>
-                        <a href="" wire:click.prevent="deletePost({{ $post->id }})" class="card-btn btn-info">Supprimer</a>
+                        @php
+                        $class=$post->approved? "info": "warning";
+                        @endphp
+                        <a href="{{ route('admin.posts.edit',$post->slug) }}" class="card-btn btn-{{$class}}">Editer</a>
+                        <a href="" wire:click.prevent="deletePost({{ $post->id }})" class="card-btn btn-{{$class}}">Supprimer</a>
                     </div>
                 </div>
             </div>

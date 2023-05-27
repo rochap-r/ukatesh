@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\GenConfig;
 use App\Models\Permission;
+use App\Models\Rank;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -44,14 +45,22 @@ class DatabaseSeeder extends Seeder
         Role::where('name','admin')->first()->permissions()->sync($permissions_id);
 
         $admin=User::factory()->create([
-            'name'=>'Rodrigue',
+            'name'=>'Chot',
+            'sname'=>'Apend',
+            'lname'=>'Rodrigue',
+            'gender'=>'m',
+            'phone'=>'243992522582',
+            'description'=>"Rochap est ma dénomination, je suis un passionné de la technologie et de l'informatique,
+            dans tout c'est concevoir,analyser et développer les solutions informatiques qui fait mon vrai dévouement.",
             'email'=>'rodriguechot@gmail.com',
             'role_id'=>2,
         ]);
 
         $users=User::factory(1)->create();
 
-        // generation de données configurable
+        // generation de données configurables
         GenConfig::factory(1)->create();
+        //generation de données Rank
+        Rank::factory(1)->create();
     }
 }

@@ -9,13 +9,13 @@
             </button>
             <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset(blogInfo()->getLogo()) }}" width="40" height="40"
+                    <img src="{{ asset(siteInfos()->getLogo()) }}" width="40" height="40"
                          alt="Administration" class="navbar-brand-image">
                 </a>
             </h1>
             <h1  class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                 <a href="{{ route('home') }}">
-                    {{ \Illuminate\Support\Str::upper(blogInfo()->sitename) }}
+                    {{ \Illuminate\Support\Str::upper(siteInfos()->sitename) }}
                 </a>
             </h1>
             <div class="navbar-nav flex-row order-md-last">
@@ -97,17 +97,19 @@
                     <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                        aria-label="Open user menu">
                         <span class="avatar avatar-sm"
-                              style="background-image: url({{ asset('administration/static/avatars/000m.jpg')}})"></span>
+                              style="background-image: url({{ $user->image ?
+                        (\Illuminate\Support\Str::startsWith($user->image->path,'placeholders/')? asset($user->image->path)
+                        : asset('storage/' . $user->image->path)): asset('placeholders/picture.jpg') }})"></span>
                         <div class="d-none d-xl-block ps-2">
-                            <div>{{ Str::ucfirst(auth()->user()->name) }} {{ Str::ucfirst('Apend') }}</div>
-                            <div class="mt-1 small text-muted">{{ Str::ucFirst(auth()->user()->role->name) }}</div>
+                            <div>{{ Str::ucfirst($user->name) }} {{ Str::ucfirst($user->sname) }}</div>
+                            <div class="mt-1 small text-muted">{{ Str::ucFirst($user->role->name) }}</div>
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <a href="#" class="dropdown-item">Statut</a>
-                        <a href="javascript:void(0)" class="dropdown-item">Profile</a>
+                        <a href="{{ route('admin.users.profile') }}" class="dropdown-item">Profile</a>
                         <div class="dropdown-divider"></div>
-                        <a href="" class="dropdown-item">Paramètres</a>
+                        <a href="javascript:void(0)" class="dropdown-item">Paramètres</a>
                         <a href="" onclick="event.preventDefault(); getElementById('nav-logout-form').submit()"
                            class="dropdown-item">Deconnexion</a>
                         <form id="nav-logout-form" action="{{ route('logout') }}" method="POST">@csrf
