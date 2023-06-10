@@ -3,9 +3,29 @@
 use App\Models\Category;
 use App\Models\GenConfig;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
+if (!function_exists('rank')) {
+    function rank()
+    {
+        return \App\Models\Rank::find(1);
+    }
+}
+if (!function_exists('rankTeam')) {
+    function rankTeam()
+    {
+        return User::join('type_users', 'users.type_user_id', '=', 'type_users.id')
+            ->join('fonctions', 'users.fonction_id', '=', 'fonctions.id')
+            ->where('type_users.name', '!=', 'membre simple')
+            ->where('users.fonction_id', '!=', '')
+            ->orderBy('id','DESC')
+            ->select('users.*')
+            ->get();
+
+    }
+}
 if (!function_exists('siteInfos')) {
     function siteInfos()
     {

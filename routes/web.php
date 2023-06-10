@@ -32,10 +32,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/contact',[ContactController::class,'index'])->name('contact');
 Route::post('contact',[ContactController::class,'store'])->name('contact.store');
+//rank
 Route::get('/rank',[\App\Http\Controllers\RankController::class,'index'])->name('rank.index');
+Route::get('/rank.login',[\App\Http\Controllers\RankController::class,'login'])->name('rank.login');
+Route::get('/rank.register',[\App\Http\Controllers\RankController::class,'register'])->name('rank.register');
+
 //Actualités
 Route::get('/blog.index',[BlogController::class,'index'])->name('blog.index');
 Route::get('/blog.show/{post:slug}',[BlogController::class,'show'])->name('blog.show');
+Route::get('/categories.index/{category:slug}',[\App\Http\Controllers\CategoryController::class,'index'])->name('category.index');
+
+//Événement
+Route::get('event.index',[\App\Http\Controllers\EventController::class,'index'])->name('event.index');
+Route::get('/event.show/{event:slug}',[\App\Http\Controllers\EventController::class,'show'])->name('event.show');
 
 
 Route::middleware('auth')->group(function () {
@@ -83,6 +92,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])
 
     //foundation Rank routes
     Route::get('/rank',[RankController::class,'index'])->name('rank.index');
+    Route::post('/rank.changeLogo',[RankController::class,'changeLogo'])->name('rank.changeLogo');
 
     //User routes
     Route::get('/users.profile',[UsersController::class,'profile'])->name('users.profile');

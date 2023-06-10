@@ -8,7 +8,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts=Post::latest()->where('approved',1)->paginate(4);
+        $posts=Post::latest()->where('approved',1)->orderBy('id','DESC')->paginate(4);
         return view('ui.blog.index',[
             'posts'=>$posts
         ]);

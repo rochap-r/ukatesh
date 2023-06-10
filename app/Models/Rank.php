@@ -11,8 +11,12 @@ class Rank extends Model
     public $fillable=[
         'logo','name','description','visionTitle','missionTitle',
         'missionContent','memberTitle','memberContent','tel',
-        'email','address','visionContent',
+        'email','address','visionContent','condition','aboutHome'
     ];
+
+    public function getLogo(){
+        return asset('assets/rank/'.$this->logo);
+    }
 
 
 }

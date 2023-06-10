@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link dropdown-toggle active">
+                            <a href="{{ route('home') }}" class="nav-link active">
                                 Acceuil
                             </a>
                         </li>
@@ -51,9 +51,18 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('blog.index') }}" class="nav-link ">
+                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
                                 Actualités
                             </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="{{ route('blog.index') }}" class="nav-link">Ukatesh Actualités</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('event.index') }}" class="nav-link">Ukatesh Événements</a>
+                                </li>
+                            </ul>
+
                         </li>
 
                         <li class="nav-item">

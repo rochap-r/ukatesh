@@ -175,7 +175,7 @@
                 </div>
             </div>
             <div class="shape">
-                <img src="{{asset('assets/images/shape-1.png')}}" alt="Image">
+                <!--<img src="" alt="Image">-->
             </div>
         </div>
     </div>

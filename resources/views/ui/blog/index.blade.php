@@ -1,7 +1,7 @@
 <!--Including main layouts-->
 @extends('layouts.main')
 
-@section('title','Université Technologique Kanyik Tesh')
+@section('title','Actualités Universitaires')
 @section('meta')
     <!--balise meta ici-->
     <meta name="robots" content="index,follow"/>
@@ -23,7 +23,7 @@
 @push('custom_css') @endpush
 @section('content')
 
-    <div class="page-banner-area bg-2">
+    <div class="page-banner-area" style="height:20px!important;background-image:url('{{ asset(siteInfos()->getBg()) }}')">
         <div class="container">
             <div class="page-banner-content">
                 <h1>Nos dernières Actualités</h1>
@@ -47,7 +47,7 @@
                                    <div class="list">
                                        <ul>
                                            <li><i class="flaticon-user"></i>Par <a href="javascript:void(0)">{{ LatestPost()->author->name }}</a></li>
-                                           <li><i class="flaticon-tag"></i>{{ LatestPost()->category->name }}</li>
+                                           <li><i class="flaticon-tag"></i><a href="{{ route('category.index',LatestPost()->category) }}">{{ LatestPost()->category->name }}</a></li>
                                        </ul>
                                    </div>
                                    <a href="{{ route('blog.show',LatestPost()) }}"><h3>{{ LatestPost()->title }}</h3></a>
@@ -58,7 +58,7 @@
                            <div class="latest-news-card-area">
                                <h3>Dernières Actualités</h3>
                                <div class="row">
-                                   @foreach($posts as $post)
+                                   @forelse($posts as $post)
                                    <div class="col-lg-6 col-md-6">
 
                                        <div class="single-news-card">
@@ -69,7 +69,7 @@
                                                <div class="list">
                                                    <ul>
                                                        <li><i class="flaticon-user"></i>Par <a href="javascript:void(0)">{{ $post->author->name }}</a></li>
-                                                       <li><i class="flaticon-tag"></i>{{ $post->category->name }}</li>
+                                                       <li><i class="flaticon-tag"></i><a href="{{ route('category.index',$post->category) }}">{{ $post->category->name }}</a></li>
                                                    </ul>
                                                </div>
                                                <a href="{{ route('blog.show',$post) }}"><h3>{{ \Illuminate\Support\Str::limit($post->title,30) }}</h3></a>
@@ -78,7 +78,11 @@
                                        </div>
 
                                    </div>
-                                   @endforeach
+                                   @empty
+                                       <div class="col-lg-4 col-md-6">
+                                           <p class="text-danger lead"> Aucun Article disponible!</p>
+                                       </div>
+                                   @endforelse
                                </div>
                            </div>
                            <div class=" mb-5">
@@ -102,7 +106,7 @@
                            <ul>
                                @forelse(categories() as $categorie)
                                <li>
-                                   <a href="javascript:void(0)">{{ $categorie->name }}<i class="ri-arrow-drop-right-fill"></i></a>
+                                   <a href="{{ route('category.index',$categorie) }}">{{ $categorie->name }}<i class="ri-arrow-drop-right-fill"></i></a>
                                </li>
                                @empty
                                    <li>
@@ -119,7 +123,7 @@
                                <div class="related-post-content">
                                    <a href="{{ route('blog.show',$post) }}"><img src="{{ asset('storage/posts/thumbnails/resized_'.$post->image->name) }}" alt="Image"></a>
                                    <h4><a href="{{ route('blog.show',$post) }}">{{ \Illuminate\Support\Str::limit($post->title,60) }}</a></h4>
-                                   <p><i class="flaticon-tag"></i> {{ $post->category->name }}</p>
+                                   <p><i class="flaticon-tag"></i> <a href="{{ route('category.index',$post->category) }}">{{ $post->category->name }}</a> </p>
                                </div>
                            </div>
                            @empty

@@ -1,5 +1,5 @@
 @extends('administration.ui.app')
-@section('title','Création de l\'Evenement')
+@section('title','Edition de l\'Evenement '.$event->title)
 @push('style')
     {{-- CSS complementaires --}}
 @endpush

@@ -27,6 +27,10 @@ class GenConfigController extends Controller
             if($old_logo!=null && File::exists(public_path($logo_path.$deletePath))){
                 File::delete(public_path($logo_path.$deletePath));
             }
+            $deletethumb="resizes/thumb_".$old_logo;
+            if($old_logo!=null && File::exists(public_path($logo_path.$deletethumb))){
+                File::delete(public_path($logo_path.$deletethumb));
+            }
 
 
             $upload=$file->move(public_path($logo_path),$filename);
@@ -145,6 +149,11 @@ class GenConfigController extends Controller
      */
     public function ImageProcess(string $resized_path, string $folder, string $new_file): void
     {
+
+        //square thumbnail
+        Image::make(public_path( $folder . $new_file))
+            ->fit(200, 200)
+            ->save(public_path( $resized_path . 'thumb_' . $new_file));
 
         //resized image
         Image::make(public_path( $folder . $new_file))

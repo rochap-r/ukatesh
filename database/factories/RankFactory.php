@@ -30,6 +30,8 @@ class RankFactory extends Factory
             'visionContent'=>"
                     <ul>
                         <li> Prévoir le meilleur pour demain.</li>
+
+
                         <li> Agir pour anticiper</li>
                         <li>Mettre en œuvre la meilleure technicité</li>
                     </ul>
@@ -54,6 +56,14 @@ class RankFactory extends Factory
             'tel'=>'243 992522582',
             'email'=>'rank@ukatesh.org',
             'address'=>'LUALABA, Ville:KOLWEZI, Commune:DILALA, Q/Mutoshi, N°:1309 Avenue Lumande',
+            'condition'=>"
+                Bienvenu à la fondation Rank, vous etes sur le point de devenir membre de la Fondation Rank,
+            ",
+            'aboutHome'=>"
+                <h2>La fondation Rank, Un acteur majeur pour un développement durable du Lualaba</h2>
+                <p>La fondation Rank est une organisation à but non lucratif qui œuvre pour le développement social et environnemental du Lualaba, en partenariat avec des universités innovantes et dynamiques comme l'Université Technologique Kanyik Tesh (Ukatesh).</p>
+                <p>La fondation Rank s'engage à impacter positivement l'environnement, en utilisant l'expertise de l'Ukatesh dans les domaines de l'énergie, de la déforestation et des impacts liés à l'environnement minier dans le Lualaba, en République Démocratique du Congo.</p>
+            ",
         ];
     }
 }

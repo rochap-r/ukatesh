@@ -8,7 +8,7 @@
 @push('custom_css') @endpush
 @section('content')
 <!--Start Page Banner-->
-<div class="page-banner-area bg-2" style="height:20px!important;">
+<div class="page-banner-area " style="height:20px!important;background-image:url('{{ asset(siteInfos()->getBg()) }}')">
     <div class="container">
         <div class="page-banner-content">
             <h1>Contactez-nous</h1>

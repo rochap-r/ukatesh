@@ -29,6 +29,10 @@
                             <a href="#tabs-condition" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
                                role="tab">Conditions</a>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#tabs-logo" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
+                               role="tab">Logo & Medias</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="card-body">
@@ -49,13 +53,30 @@
 
                         <div class="tab-pane fade active show" id="tabs-condition" role="tabpanel">
                             <div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi dignissimos
-                                    exercitationem expedita facere harum illum impedit in modi nemo nesciunt non numquam
-                                    odio officia, perferendis qui quia temporibus voluptatem.
-                                </div>
-                                <div>Aliquid, deleniti dicta eveniet incidunt magni nesciunt odio saepe. Alias aperiam
-                                    dolorum hic illo inventore labore minima nemo non odio sit. Ad deleniti et facilis
-                                    ipsam mollitia nesciunt nulla, placeat!
+                                @livewire('ui.admin.rank.condition')
+                            </div>
+                        </div>
+                        <div class="tab-pane fade active show" id="tabs-logo" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Changez le Logo de la fondation</h3>
+                                    <div class="mb-2" style="max-width: 200px">
+                                        <img src="" class="img-thumbnail" alt="" id="logo-image-preview"
+                                             data-ijabo-default-img="{{ \App\Models\Rank::find(1)->getLogo() }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <span class="text-danger">
+                                            votre image de logo doit avoir comme dimensions : 120x120
+                                        </span>
+                                    </div>
+                                    <form action="{{ route('admin.rank.changeLogo') }}" method="POST" id="changeLogo">
+                                        @csrf
+                                        <div class="mb-2">
+                                            <input type="file" name="logo" class="form-control">
+                                        </div>
+                                        <button class="btn btn-primary">Changer le Logo</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -70,7 +91,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 let options = {
-                    selector: '#tinymce-mytextarea,#tinymce-memberContent,#tinymce-missionContent,#tinymce-visionContent',
+                    selector: '#tinymce-mytextarea,#tinymce-memberContent,#tinymce-missionContent,#tinymce-visionContent,#tinymce-condition,#tinymce-aboutHome',
                     height: 300,
                     menubar:'favs file edit  format',
                     statusbar: false,
@@ -92,6 +113,10 @@
                                 livewireInstance.set('missionContent', editor.getContent());
                             }else if (editor.id === 'tinymce-visionContent') {
                                 livewireInstance.set('visionContent', editor.getContent());
+                            }else if (editor.id === 'tinymce-condition') {
+                                livewireInstance.set('condition', editor.getContent());
+                            }else if (editor.id === 'tinymce-aboutHome') {
+                                livewireInstance.set('aboutHome', editor.getContent());
                             }
                         });
                     }
@@ -103,6 +128,45 @@
                     options.content_css = 'dark';
                 }
                 tinyMCE.init(options);
+            })
+
+            $('input[name="logo"]').ijaboViewer({
+                preview: '#logo-image-preview',
+                imageShape: 'square',
+                allowedExtensions: ['jpg', 'jpeg', 'png'],
+                onErrorShape: function(message, element) {
+                    alert(message);
+                },
+                onInvalidType: function(message, element) {
+                    alert(message);
+                },
+                onSuccess: function(message, element) {
+
+                }
+            });
+
+            $('#changeLogo').submit(function(e) {
+                e.preventDefault();
+                var form = this;
+                $.ajax({
+                    url: $(form).attr('action'),
+                    method: $(form).attr('method'),
+                    data: new FormData(form),
+                    processData: false,
+                    dataType: 'json',
+                    contentType: false,
+                    beforeSend: function() {},
+                    success: function(data) {
+                        toastr.remove();
+                        if (data.status == 1) {
+                            toastr.success(data.msg);
+                            $(form)[0].reset();
+                            Livewire.emit('UpdateHeader');
+                        } else {
+                            toastr.error(data.msg)
+                        }
+                    }
+                });
             })
         </script>
 
