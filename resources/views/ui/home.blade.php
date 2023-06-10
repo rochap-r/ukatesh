@@ -84,7 +84,7 @@
                     <div class="campus-content">
                         <div class="health-care-content text-justify pt-3">
                             <a href="javascript:void(0)"><h3>Université Technologique Kanyik Tesh</h3></a>
-                            <p>Ensemble avec vous, nous atteindrons le sommet et tout commencera par lorsque vous ferez de notre vision la vôtre!</p>
+                            <p>Ensemble avec vous, nous atteindrons le sommet et tout commencera lorsque vous ferez de notre vision la vôtre!</p>
                         </div>
                         <div class="img">
                             <a href=javascript:void(0)"><img src="{{ asset(siteInfos()->getBg()) }}" alt="Image"></a>
@@ -119,7 +119,7 @@
 
     </div>
     <!--End RANK Section-->
-
+    <!-- About -->
     <div class=" ptb-50 bg-f4EEEE" id="about-section">
         <div class="container">
             <div class="row">
@@ -134,6 +134,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="container py-5">
             <div class="row">
@@ -155,6 +156,7 @@
         </div>
 
     </div>
+    <!-- About -->
 
     <!-- Section galerie-->
     <div class="ptb-50 bg-f4EEEE" id="galery-section">

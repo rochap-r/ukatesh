@@ -11,6 +11,7 @@ class GenConfig extends Model
 
     protected $fillable=[
         'sitename',
+        'sigle',
         'description',
         'logo',
         'bg_image',

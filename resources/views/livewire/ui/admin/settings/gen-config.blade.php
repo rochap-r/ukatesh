@@ -3,11 +3,18 @@
 
     <form method="POST" wire:submit.prevent='updateGenConfig()'>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="mb-3">
-                    <label for="sitename" class="form-label">Nom du site</label>
+                    <label for="sitename" class="form-label">Nom de l'organisation</label>
                     <input type="text" id="sitename" class="form-control" name="sitename" placeholder="Entrez le nom de l'université" wire:model='sitename'>
                     <span class="text-danger">@error('sitename'){{$message}}@enderror</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="sigle" class="form-label">L'Abréviation de l'organisation</label>
+                    <input type="text" id="sigle" class="form-control" name="sigle" placeholder="Entrez l'abréviation l'université" wire:model='sigle'>
+                    <span class="text-danger">@error('sigle'){{$message}}@enderror</span>
                 </div>
             </div>
             <div class="col-md-6">

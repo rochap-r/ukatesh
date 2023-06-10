@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Administrations\AboutController;
 use App\Http\Controllers\Administrations\AdminController;
 use App\Http\Controllers\Administrations\CategoryController;
 use App\Http\Controllers\Administrations\EvenementController;
@@ -98,6 +99,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])
     Route::get('/users.profile',[UsersController::class,'profile'])->name('users.profile');
     Route::post('/picture',[UsersController::class,'changePicture'])->name('users.changePicture');
     Route::get('/users.index',[UsersController::class,'index'])->name('users.index');
+
+    Route::post('about',[AboutController::class,'aboutImg'])->name('about.about-img');
+    Route::post('project',[AboutController::class,'projectImg'])->name('about.project-img');
 
     //type users route
     Route::get('/type.users',[TypeUserController::class,'index'])->name('type.users');

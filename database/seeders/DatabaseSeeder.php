@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\About;
 use App\Models\GenConfig;
 use App\Models\Permission;
 use App\Models\Rank;
@@ -22,6 +23,9 @@ class DatabaseSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         User::truncate();
         Role::truncate();
+        GenConfig::truncate();
+        Rank::truncate();
+        About::truncate();
         Permission::truncate();
         Schema::enableForeignKeyConstraints();
 
@@ -60,7 +64,11 @@ class DatabaseSeeder extends Seeder
 
         // generation de données configurables
         GenConfig::factory(1)->create();
+
         //generation de données Rank
         Rank::factory(1)->create();
+
+        //generation de données d'à propos
+        About::factory(1)->create();
     }
 }

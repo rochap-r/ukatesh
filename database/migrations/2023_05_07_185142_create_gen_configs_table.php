@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('sitename')->nullable();
+            $table->string('sigle')->nullable();
             $table->text('description')->nullable();
             $table->string('logo')->nullable();
             $table->string('bg_image')->nullable();

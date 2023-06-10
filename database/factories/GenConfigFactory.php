@@ -17,7 +17,8 @@ class GenConfigFactory extends Factory
     public function definition(): array
     {
         return [
-            'sitename'=>'Ukatesh',
+            'sitename'=>'Université Technologie Kanyik Tesh',
+            'sigle'=>'Ukatesh',
             'description'=>"Université Technologique Kanyik Tesh, une formation, un parcours et une assurance",
             'logo'=>'',
             'bg_image'=>'',

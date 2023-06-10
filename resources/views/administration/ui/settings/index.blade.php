@@ -30,7 +30,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <a href="#tabs-about" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
-                       role="tab">Apropos du site</a>
+                       role="tab">Apropos d'Ukatesh</a>
                 </li>
             </ul>
         </div>
@@ -139,9 +139,45 @@
                 </div>
 
                 <div class="tab-pane fade active show" id="tabs-about" role="tabpanel">
-                    <h4>Paramètres Généraux</h4>
+                    <h4>Apropos de l'Ukatesh</h4>
                     <div>
-                        <!-- -->
+                        <div class="row">
+                            <div class="col-md-6 my-2">
+                                <h3>
+                                    Image d'Apropos
+                                </h3>
+                                <div class="mb-2" style="max-width:100px">
+                                    <img src="" alt="" id="about-image-preview" class="img-thumbnail"
+                                         data-ijabo-default-img="{{ \App\Models\About::find(1)->aboutImg() }}">
+                                </div>
+                                <form action="{{ route('admin.about.about-img') }}" method="POST" id="about">
+                                    @csrf
+                                    <div class="mb-2">
+                                        <input type="file" name="about_img" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">changer l'image d'à propos</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <h3>Image du projet</h3>
+                                <div class="mb-2" style="max-width:100px">
+                                    <img src="" alt="" id="project-image-preview" class="img-thumbnail"
+                                         data-ijabo-default-img="{{ \App\Models\About::find(1)->projectImg() }}">
+                                </div>
+                                <form action="{{ route('admin.about.project-img') }}" method="POST" id="project">
+                                    @csrf
+                                    <div class="mb-2">
+                                        <input type="file" name="project_img" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">changer l'image du projet</button>
+                                </form>
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        @livewire('ui.admin.settings.about')
                     </div>
                 </div>
             </div>
@@ -155,7 +191,7 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             let options = {
-                selector: '#tinymce-mytextarea',
+                selector: '#tinymce-mytextarea,#tinymce-about,#tinymce-project,#tinymce-galery',
                 height: 300,
                 menubar:'favs file edit  format',
                 statusbar: false,
@@ -168,9 +204,22 @@
                 content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif; font-size: 14px; -webkit-font-smoothing: antialiased; }',
                 setup: function (editor) {
                     // Ajoutez un gestionnaire d'événements pour l'événement 'change'
+                    // editor.on('change', function (e) {
+                    //     // Mettez à jour les données de Livewire manuellement
+                    //     Livewire.find(document.getElementById('tinymce-mytextarea').closest('[wire\\:id]').getAttribute('wire:id')).set('condition', editor.getContent());
+                    // });
+
                     editor.on('change', function (e) {
-                        // Mettez à jour les données de Livewire manuellement
-                        Livewire.find(document.getElementById('tinymce-mytextarea').closest('[wire\\:id]').getAttribute('wire:id')).set('condition', editor.getContent());
+                        let livewireInstance = Livewire.find(document.getElementById(editor.id).closest('[wire\\:id]').getAttribute('wire:id'));
+                        if (editor.id === 'tinymce-mytextarea') {
+                            livewireInstance.set('description', editor.getContent());
+                        } else if (editor.id === 'tinymce-about') {
+                            livewireInstance.set('about', editor.getContent());
+                        } else if (editor.id === 'tinymce-project') {
+                            livewireInstance.set('project', editor.getContent());
+                        }else if (editor.id === 'tinymce-galery') {
+                            livewireInstance.set('galery', editor.getContent());
+                        }
                     });
                 }
             }
@@ -255,6 +304,38 @@
 
             }
         });
+        //About
+        $('input[name="about_img"]').ijaboViewer({
+            preview: '#about-image-preview',
+            imageShape: 'rectangular',
+            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            onErrorShape: function(message, element) {
+                alert(message);
+            },
+            onInvalidType: function(message, element) {
+                alert(message);
+            },
+            onSuccess: function(message, element) {
+
+            }
+        });
+
+        //About Project
+        $('input[name="project_img"]').ijaboViewer({
+            preview: '#project-image-preview',
+            imageShape: 'rectangular',
+            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            onErrorShape: function(message, element) {
+                alert(message);
+            },
+            onInvalidType: function(message, element) {
+                alert(message);
+            },
+            onSuccess: function(message, element) {
+
+            }
+        });
+        //end About
 
         $('#changeBg').submit(function(e) {
             e.preventDefault();
@@ -354,6 +435,56 @@
 
 
         $('#changeIcon18').submit(function(e) {
+            e.preventDefault();
+            var form = this;
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: new FormData(form),
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+                beforeSend: function() {},
+                success: function(data) {
+                    toastr.remove();
+                    if (data.status == 1) {
+                        toastr.success(data.msg);
+                        $(form)[0].reset();
+                        Livewire.emit('UpdateHeader');
+                    } else {
+                        toastr.error(data.msg)
+                    }
+                }
+            });
+        })
+
+        //About
+        $('#about').submit(function(e) {
+            e.preventDefault();
+            var form = this;
+            $.ajax({
+                url: $(form).attr('action'),
+                method: $(form).attr('method'),
+                data: new FormData(form),
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+                beforeSend: function() {},
+                success: function(data) {
+                    toastr.remove();
+                    if (data.status == 1) {
+                        toastr.success(data.msg);
+                        $(form)[0].reset();
+                        Livewire.emit('UpdateHeader');
+                    } else {
+                        toastr.error(data.msg)
+                    }
+                }
+            });
+        })
+
+        //Project
+        $('#project').submit(function(e) {
             e.preventDefault();
             var form = this;
             $.ajax({

@@ -7,10 +7,11 @@ use Livewire\Component;
 class GenConfig extends Component
 {
     public $settings;
-    public $sitename,$phone,$email,$adress,$description,$condition;
+    public $sitename,$sigle,$phone,$email,$adress,$description,$condition;
     public function mount(){
         $this->settings=\App\Models\GenConfig::find(1);
         $this->sitename=$this->settings->sitename;
+        $this->sigle=$this->settings->sigle;
         $this->email=$this->settings->email;
         $this->phone=$this->settings->phone;
         $this->adress=$this->settings->adress;
@@ -19,12 +20,14 @@ class GenConfig extends Component
     public function updateGenConfig(){
         $this->validate([
             'sitename'=>'required',
+            'sigle'=>'required',
             'description'=>'required',
             'phone'=>'required',
             'email'=>'required | email',
             'adress'=>'required',
         ],[
-            'sitename.required'=>'Le nom du site est obligatoire veuillez le saisir!',
+            'sitename.required'=>'Le nom de l\'Université est obligatoire veuillez le saisir!',
+            'sigle.required'=>'L\'Abréviation de l\'Université est obligatoire veuillez le saisir!',
             'phone.required'=>'Le numero du téléphone est obligatoire veuillez le saisir!',
             'email.required'=>'L\'email est obligatoire veuillez le saisir!',
             'adress.required'=>'L\'adresse physique est obligatoire veuillez la saisir!',
@@ -33,6 +36,7 @@ class GenConfig extends Component
         ]);
         $data=$this->getDataForValidation([
             'sitename'=>'required',
+            'sigle'=>'required',
             'description'=>'required',
             'phone'=>'required',
             'email'=>'required | email',
@@ -41,6 +45,7 @@ class GenConfig extends Component
 
         $update=$this->settings->update([
             'sitename'=>$this->sitename,
+            'sigle'=>$this->sigle,
             'email'=>$this->email,
             'phone'=>$this->phone,
             'adress'=>$this->adress,
