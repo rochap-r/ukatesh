@@ -26,6 +26,12 @@ if (!function_exists('rankTeam')) {
 
     }
 }
+if (!function_exists('about')) {
+    function about()
+    {
+        return \App\Models\About::find(1);
+    }
+}
 if (!function_exists('siteInfos')) {
     function siteInfos()
     {

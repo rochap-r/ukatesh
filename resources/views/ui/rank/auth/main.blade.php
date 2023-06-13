@@ -6,9 +6,9 @@
     <meta name="author" content="Fondation Rank">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>@yield('title', 'Authentification à la fondation Rank') </title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ \App\Models\GenConfig::find(1)->getAppleIcon18() }}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ \App\Models\GenConfig::find(1)->getIcon48() }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ \App\Models\GenConfig::find(1)->getIcon16() }}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ siteInfos()->getAppleIcon18() }}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ siteInfos()->getIcon48() }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ siteInfos()->getIcon16() }}}">
     <link rel="manifest" href="{{ asset('assets/favicons/site.webmanifest') }}">
 
     <link href="{{ asset('administration/dist/css/tabler.min.css') }}" rel="stylesheet" />

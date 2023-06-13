@@ -5,8 +5,8 @@
             <div class="mobile-responsive-menu">
                 <div class="logo">
                     <a href="/">
-                        <img src="{{ asset('assets/favicons/logo.png') }}" class="main-logo" alt="logo">
-                        <img src="{{ asset('assets/favicons/logo.png') }}"  class="white-logo" alt="logo">
+                        <img src="{{ siteInfos()->getLogo() }}" class="main-logo" alt="logo">
+                        <img src="{{ siteInfos()->getLogo() }}"  class="white-logo" alt="logo">
                         <span class="label">{{ siteInfos()->sitename }}</span>
                         <hr class="line-height">
                     </a>
@@ -19,9 +19,9 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light sticky-top">
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/favicons/logo.png') }}"  class="main-logo" alt="logo">
-                    <img src="{{ asset('assets/favicons/logo.png') }}"  class="white-logo" alt="logo">
-                    <span class="label"> Ukatesh </span>
+                    <img src="{{ siteInfos()->getLogo() }}"  class="main-logo" alt="logo">
+                    <img src="{{ siteInfos()->getLogo() }}"  class="white-logo" alt="logo">
+                    <span class="label"> {{ siteInfos()->sigle }} </span>
                     <hr class="line-height">
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -104,7 +104,7 @@
                 <a href=" {{ route('home') }}">
                     <img src="{{ asset('assets/favicons/logo.png')}}" width="50" class="main-logo" alt="logo">
                     <img src="{{ asset('assets/favicons/logo.png')}}" width="50" class="white-logo" alt="logo">
-                    <span class="label">Ukatesh</span>
+                    <span class="label">{{ siteInfos()->sigle }}</span>
                     <hr class="line-height">
                 </a>
                 <div class="sidebar-content">

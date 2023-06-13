@@ -77,17 +77,17 @@
                         <div class="list">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="flaticon-facebook"></i></a>
+                                    <a href="{{ siteInfos()->facebook }}" target="_blank"><i class="flaticon-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="flaticon-twitter"></i></a>
+                                    <a href="{{ siteInfos()->twitter  }}" target="_blank"><i class="flaticon-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="flaticon-linkedin"></i></a>
+                                    <a href="{{ siteInfos()->linkedin  }}" target="_blank"><i class="flaticon-linkedin"></i></a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
-                                </li>
+                                {{-- <li>--}}
+                                {{--     <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>--}}
+                                {{-- </li>--}}
                             </ul>
                         </div>
                     </div>

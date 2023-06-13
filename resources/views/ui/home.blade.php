@@ -124,13 +124,11 @@
         <div class="container">
             <div class="row">
                 <div class="mb-2">
-                    <h2>À propos de nous</h2>
-                    <p>Nous sommes l'université technologique Kanyik Tesh, une université en cours de construction à Kolwezi en RDC qui va révolutionner avec sa politique d'enseignement. Nous proposons des formations techniques dans les domaines des mines, de la géologie, de la chimie, de la mécanique, de l'électricité, de l'électronique et de l'informatique.</p>
-                    <p>Nous adoptons le système LMD basé sur plus de réalité pratique que théorique. Nous offrons un enseignement de qualité et reconnu, assuré par des enseignants qualifiés et expérimentés. Nous requérons le baccalauréat ou un diplôme équivalent pour accéder à nos formations, dont la durée varie selon le domaine et le niveau de diplôme.</p>
+                    {!! about()->about !!}
                     <a href="#" class="btn btn-primary">En savoir plus</a>
                 </div>
                 <div class="">
-                    <img src="{{ asset(siteInfos()->getBg()) }}" alt="Université" class="img-fluid">
+                    <img src="{{ about()->aboutImg() }}" alt="Université" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -139,17 +137,10 @@
         <div class="container py-5">
             <div class="row">
                 <div class="">
-                    <img src="{{ asset(siteInfos()->getBg()) }}" alt="Projets" class="img-fluid">
+                    <img src="{{ about()->projectImg() }}" alt="Projets" class="img-fluid">
                 </div>
                 <div class="mt-2">
-                    <h2>Nos projets futurs</h2>
-                    <ul>
-                        <li>Finaliser la construction du campus et l'équiper avec des infrastructures modernes et performantes.</li>
-                        <li>Développer des partenariats avec des acteurs locaux et internationaux du monde académique, professionnel et social.</li>
-                        <li>Lancer des programmes de recherche innovants et interdisciplinaires dans nos domaines de formation.</li>
-                        <li>Renforcer l'accompagnement et l'insertion professionnelle de nos étudiants et diplômés.</li>
-                        <li>Promouvoir la diversité et l'ouverture culturelle au sein de notre communauté universitaire.</li>
-                    </ul>
+                    {!! about()->project !!}
                     <a href="#" class="btn btn-primary">En savoir plus</a>
                 </div>
             </div>
@@ -159,25 +150,22 @@
     <!-- About -->
 
     <!-- Section galerie-->
+    <!--
     <div class="ptb-50 bg-f4EEEE" id="galery-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h2>Notre Galerie</h2>
-                    <p>Nous sommes ravis de partager avec vous notre vision et notre passion pour l’éducation et la science.
-                        Dans cette section, vous trouverez quelques images récentes sélectionnées de la galerie qui illustrent nos activités,
-                        nos projets et notre campus en construction.
-                        Vous pourrez voir à quoi ressemblera le résultat final de notre ambitieux programme de développement et d’innovation. Bonne visite!</p>
+                    {!! "" /*about()->galery*/ !!}
                     <a href="javascript:void(0)" class="btn btn-primary">Découvrez plus!</a>
                 </div>
                 <div class="col-md-6">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ asset(siteInfos()->getBg()) }}" alt="Ukatesh Campus 1" class="d-block w-100">
+                                <img src="{{ ''/*asset(siteInfos()->getBg())*/ }}" alt="Ukatesh Campus 1" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset(siteInfos()->getBg()) }}" alt="Ukatesh Campus 2" class="d-block w-100">
+                                <img src="{{'' /*asset(siteInfos()->getBg())*/ }}" alt="Ukatesh Campus 2" class="d-block w-100">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -193,6 +181,7 @@
             </div>
         </div>
     </div>
+    -->
     <!-- End Section galerie-->
 
 

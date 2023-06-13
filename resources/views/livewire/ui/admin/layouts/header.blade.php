@@ -8,13 +8,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}" target="_blank">
                     <img src="{{ asset(siteInfos()->getLogo()) }}" width="40" height="40"
                          alt="Administration" class="navbar-brand-image">
                 </a>
             </h1>
             <h1  class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}" target="_blank">
                     {{ \Illuminate\Support\Str::upper(siteInfos()->sitename) }}
                 </a>
             </h1>
