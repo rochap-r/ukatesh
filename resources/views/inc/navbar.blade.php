@@ -7,7 +7,7 @@
                     <a href="/">
                         <img src="{{ siteInfos()->getLogo() }}" class="main-logo" alt="logo">
                         <img src="{{ siteInfos()->getLogo() }}"  class="white-logo" alt="logo">
-                        <span class="label">{{ siteInfos()->sitename }}</span>
+                        <span class="label">{{ siteInfos()->sigle }}</span>
                         <hr class="line-height">
                     </a>
                 </div>
