@@ -13,7 +13,7 @@
         <div class="page-banner-content">
             <h1>Contactez-nous</h1>
             <ul>
-                <li><a href="{{ route('home') }}">Accueil</a></li>
+                <li><a href="{{ route('home') }}">{{ siteInfos()->sigle }}</a></li>
                 <li>Contact</li>
             </ul>
         </div>
@@ -72,7 +72,7 @@
             <div class="col-lg-6">
                 <div class="contact-and-address">
                     <h2>Ukatesh contact</h2>
-                    <p>
+                    <p class="lead">
                         Bienvenu sur cette page, vous avez besoins d'informations sur nous ?
                         n'hésitez pas de nous contacter via tous les moyens disponibles sur cette page!
                     </p>
@@ -86,10 +86,16 @@
 
 
                                     <h4>Informations de Contact</h4>
-                                    <p><b>N° Téléphone</b></p>
-                                    <p><a href="tel:+243819002615">+243(0)81-900-2615</a></p>
-                                    <p><b>Adresse électronique</b></p>
-                                    <p><a href="mailto:contact@ukatesh.org">info@ukatesh.org</a></p>
+                                    <p>
+                                        <b>
+                                            <a href="tel:{{ siteInfos()->phone }}">{{ siteInfos()->phone }}</a>
+                                        </b>
+                                    </p>
+                                    <p>
+                                       <b>
+                                           <a href="mailto:{{ siteInfos()->email }}">{{ siteInfos()->email }}</a>
+                                       </b>
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
@@ -98,11 +104,7 @@
                                         <i class="ri-map-pin-line"></i>
                                     </div>
                                     <h4>Adresse Physique</h4>
-                                    <p>Avenue Lumande</p>
-                                    <p>Quartier Latin</p>
-                                    <p>Commune de Manika</p>
-                                    <p>Ville de Kolwezi</p>
-                                    <p>RDC, Province du Lualaba</p>
+                                    <p class="lead">{{ siteInfos()->adress }}</p>
                                 </div>
                             </div>
                         </div>
@@ -110,21 +112,21 @@
 
                     <div class="social-media">
                         <h3>Ukatesh Réseaux Sociaux</h3>
-                        <p>
-                            En cours de développement ...
+                        <p class="lead">
+                            Veuillez nous suivre en permanence sur nos réseaux sociaux, ci-dessous.
                         </p>
                         <ul>
                             <li>
-                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-facebook"></i></a>
+                                <a href="{{ siteInfos()->facebook }}" target="_blank"><i class="flaticon-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-twitter"></i></a>
+                                <a href="{{ siteInfos()->twitter }}" target="_blank"><i class="flaticon-twitter"></i></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-linkedin"></i></a>
+                                <a href="{{ siteInfos()->linkedin }}" target="_blank"><i class="flaticon-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>

@@ -83,11 +83,11 @@
                      data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
                     <div class="campus-content">
                         <div class="health-care-content text-justify pt-3">
-                            <a href="javascript:void(0)"><h3>Université Technologique Kanyik Tesh</h3></a>
-                            <p>Ensemble avec vous, nous atteindrons le sommet et tout commencera lorsque vous ferez de notre vision la vôtre!</p>
+                            <a href="javascript:void(0)"><h3>{{ siteInfos()->sitename }}</h3></a>
+                            {!! siteInfos()->description !!}
                         </div>
                         <div class="img">
-                            <a href=javascript:void(0)"><img src="{{ asset(siteInfos()->getBg()) }}" alt="Image"></a>
+                            <a href="javascript:void(0)"><img src="{{ asset(siteInfos()->getBg()) }}" alt="Image"></a>
                         </div>
 
                     </div>
@@ -125,7 +125,7 @@
             <div class="row">
                 <div class="mb-2">
                     {!! about()->about !!}
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                    <a href="javascript:void(0)" class="btn btn-primary">En savoir plus</a>
                 </div>
                 <div class="">
                     <img src="{{ about()->aboutImg() }}" alt="Université" class="img-fluid">
@@ -141,7 +141,7 @@
                 </div>
                 <div class="mt-2">
                     {!! about()->project !!}
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                    <a href="javascript:void(0)" class="btn btn-primary">En savoir plus</a>
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Derniers Actualités</h2>
-                <p>Retrouvez les derniers articles universitaires , ici.</p>
+                <p class="lead">Retrouvez les derniers articles en tendance , ici.</p>
             </div>
             <div class="news-slider owl-carousel owl-theme owl-loaded owl-drag">
                 <div class="owl-stage-outer">

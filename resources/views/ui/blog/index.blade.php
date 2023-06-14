@@ -41,12 +41,12 @@
            <div class="container">
                <div class="row">
                    <div class="col-lg-8">
-                       <div class="latest-news-left-content pr-20" style="background-image:url({{ asset('storage/posts/'.LatestPost()->image->name) }}); height:450px;">
+                       <div class="latest-news-left-content pr-20" style="background-image:url({{ LatestPost()? asset('storage/posts/'.LatestPost()->image->name) :'' }}); height:450px;">
                            <div class="latest-news-simple-card">
                                <div class="news-content">
                                    <div class="list">
                                        <ul>
-                                           <li><i class="flaticon-user"></i>Par <a href="javascript:void(0)">{{ LatestPost()->author->name }}</a></li>
+                                           <li><i class="flaticon-user"></i>Par <a href="javascript:void(0)">{{LatestPost()? LatestPost()->author->name:'' }}</a></li>
                                            <li><i class="flaticon-tag"></i><a href="{{ route('category.index',LatestPost()->category) }}">{{ LatestPost()->category->name }}</a></li>
                                        </ul>
                                    </div>

@@ -112,20 +112,14 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="footer-logo-area">
                         <a href="{{ route('home') }}">
-                            <img src="{{asset('assets/favicons/logo.png')}}" alt="Image">
-                            <span class="label" style="font-size:2.8em;">{{ siteInfos()->sitename }}</span>
+                            <img src="{{ siteInfos()->getLogo() }}" alt="Image">
+                            <span class="label" style="font-size:2.8em;">{{ siteInfos()->sigle }}</span>
                             <hr class="line-height">
                         </a>
-                        <p>
-                            L’Université Technologique Kanyik Tesh a été fondée par le visioneur Mr. <b>Chiyey Kanyik T</b>
-                            en 2023, et inaugurée en 2025
-                            pour le bien public. Par la suite, elle est reconnue mondialement
-                        </p>
                         <div class="contact-list">
                             <ul class="d-flex my-1">
-                                <li><a href="tel:+243819002615">+243(0)81-900-2615
-                                    </a></li>&nbsp;&nbsp;
-                                <li><a href="mailto:contact@ukatesh.org">info@ukatesh.org</a></li>
+                                <li><a href="tel:{{ siteInfos()->phone }}">{{ siteInfos()->phone }} </a></li>&nbsp;&nbsp;
+                                <li><a href="mailto:{{ siteInfos()->email }}">{{ siteInfos()->email }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -135,12 +129,10 @@
                         <h3>Nos liens Utiles</h3>
                         <div class="list">
                             <ul>
-                                <li><a href="javascript:void(0)">Accueil</a></li>
-                                <li><a href="javascript:void(0)">Nos Contacts</a></li>
-                                <li><a href="javascript:void(0)">Qui Sommes-nous?</a></li>
-                                <li><a href="javascript:void(0)">Notre Gallérie</a></li>
-                                <li><a href="javascript:void(0)">Actualités à la une</a></li>
-                                <li><a href="javascript:void(0)">Nos Projets</a></li>
+                                <li><a href="{{ route('home') }}">Accueil</a></li>
+                                <li><a href="{{ route('contact') }}">Nos Contacts</a></li>
+                                <li><a href="{{ route('rank.index') }}">Fondation Rank</a></li>
+                                <li><a href="{{ route('blog.index') }}">Actualités à la une</a></li>
                             </ul>
                         </div>
                     </div>
@@ -154,8 +146,6 @@
                                 <li><a href="javascript:void(0)">Administration</a></li>
                                 <li><a href="javascript:void(0)">Sécurité du Campus</a></li>
                                 <li><a href="javascript:void(0)">Aide financière</a></li>
-                                <li><a href="javascript:void(0)">Infrastructures</a></li>
-                                <li><a href="javascript:void(0)">Ressources Humaines</a></li>
                             </ul>
                         </div>
                     </div>
@@ -168,7 +158,6 @@
                                 <li><a href="javascript:void(0)">Bibliothèque</a></li>
                                 <li><a href="javascript:void(0)">Emploi du temps</a></li>
                                 <li><a href="javascript:void(0)">Postuler pour les admissions</a></li>
-                                <li><a href="javascript:void(0)">Payer mes frais de scolarité</a></li>
                             </ul>
                         </div>
                     </div>
@@ -191,16 +180,16 @@
                             <ul>
                                 <li><span>Nos réseaux sociaux</span></li>
                                 <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="ri-facebook-fill"></i></a>
+                                    <a href="{{ siteInfos()->facebook }}" target="_blank"><i class="ri-facebook-fill"></i></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="ri-twitter-fill"></i></a>
+                                    <a href="{{ siteInfos()->twitter  }}" target="_blank"><i class="ri-twitter-fill"></i></a>
                                 </li>
+{{--                                <li>--}}
+{{--                                    <a href="javascript:void(0)" target="_blank"><i class="ri-instagram-line"></i></a>--}}
+{{--                                </li>--}}
                                 <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="ri-instagram-line"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                                    <a href="{{ siteInfos()->linkedin }}" target="_blank"><i class="ri-linkedin-fill"></i></a>
                                 </li>
                             </ul>
                         </div>

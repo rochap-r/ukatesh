@@ -110,38 +110,37 @@
                 <div class="sidebar-content">
                     <h3>Apropos de nous</h3>
                     <p>
-                        <b>ukatesh</b>, Université Téchnologique Kanyik Tesh,
-                        est votre point de départ dans l'univers de l'innovation
+                        <b>{{ siteInfos()->sitename }}</b>,
                     </p>
-
+                    {!! siteInfos()->description !!}
                     <div class="sidebar-btn">
-                        <a href="javascript:void(0)" class="default-btn">Entrons En Contact</a>
+                        <a href="{{ route('contact') }}" target="_blank" class="default-btn">Entrons En Contact</a>
                     </div>
                 </div>
                 <div class="sidebar-contact-info">
                     <h3>Nos Informations de contact</h3>
 
                     <ul class="info-list">
-                        <li><i class="ri-phone-fill"></i> <a href="tel:+243994589272">+243(0)99-458-9272</a></li>
+                        <li><i class="ri-phone-fill"></i> <a href="tel:{{ siteInfos()->phone }}">{{ siteInfos()->phone }}</a></li>
 
-                        <li><i class="ri-mail-line"></i><a href="mailto:contact@ukatesh.org">contact@ukatesh.org</a></li>
+                        <li><i class="ri-mail-line"></i><a href="mailto:{{ siteInfos()->email }}">{{ siteInfos()->email }}</a></li>
 
-                        <li><i class="ri-map-pin-line"></i>54, Av/Du30/Juin, Q/Latin, KZI </li>
+                        <li><i class="ri-map-pin-line"></i>{{ siteInfos()->adress }}</li>
                     </ul>
                 </div>
                 <ul class="sidebar-social-list">
                     <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-facebook"></i></a>
+                        <a href="{{ siteInfos()->facebook }}" target="_blank"><i class="flaticon-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-twitter"></i></a>
+                        <a href="{{ siteInfos()->twitter }}" target="_blank"><i class="flaticon-twitter"></i></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-linkedin"></i></a>
+                        <a href="{{ siteInfos()->linkedin }}" target="_blank"><i class="flaticon-linkedin"></i></a>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
-                    </li>
+{{--                    <li>--}}
+{{--                        <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
         </div>

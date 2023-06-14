@@ -19,7 +19,7 @@ class GenConfigFactory extends Factory
         return [
             'sitename'=>'Université Technologie Kanyik Tesh',
             'sigle'=>'Ukatesh',
-            'description'=>"Université Technologique Kanyik Tesh, une formation, un parcours et une assurance",
+            'description'=>"<p>Ensemble avec vous, nous atteindrons le sommet et tout commencera lorsque vous ferez de notre vision la vôtre!</p>",
             'logo'=>'',
             'bg_image'=>'',
             'email'=>'info@ukatesh.org',
