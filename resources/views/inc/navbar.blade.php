@@ -110,7 +110,7 @@
                 <div class="sidebar-content">
                     <h3>Apropos de nous</h3>
                     <p>
-                        <b>{{ siteInfos()->sitename }}</b>,
+                        <b>{{ siteInfos()->sigle }}</b>,
                     </p>
                     {!! siteInfos()->description !!}
                     <div class="sidebar-btn">

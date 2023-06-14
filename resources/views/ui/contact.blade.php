@@ -122,9 +122,9 @@
                             <li>
                                 <a href="{{ siteInfos()->twitter }}" target="_blank"><i class="flaticon-twitter"></i></a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="javascript:void(0)" target="_blank"><i class="flaticon-instagram"></i></a>--}}
+{{--                            </li>--}}
                             <li>
                                 <a href="{{ siteInfos()->linkedin }}" target="_blank"><i class="flaticon-linkedin"></i></a>
                             </li>
