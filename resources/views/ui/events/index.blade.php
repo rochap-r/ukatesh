@@ -23,7 +23,7 @@
 @push('custom_css') @endpush
 @section('content')
 
-    <div class="page-banner-area" style="height:20px!important;background-image:url('{{ asset(siteInfos()->getBg()) }}')">
+    <div class="page-banner-area" style="background-image:url('{{ asset(siteInfos()->getBg()) }}')">
         <div class="container">
             <div class="page-banner-content">
                 <h1>Les événements Universitaires</h1>
