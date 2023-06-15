@@ -60,7 +60,7 @@
 <script src="{{ asset('administration/dist/js/demo-theme.min.js?1674944402')}}"></script>
 <!-- Start Preloader Area -->
 <div class="cssload-loader">
-    Ukatesh.org...
+    Ukatesh.org
 </div>
 <!-- End Preloader Area -->
 <main>
