@@ -95,6 +95,20 @@
                                 </label>
                             </div>
                         </div>
+
+                        <div class="mb-3">
+                            <div>
+                                <label class="row">
+                                    <span class="col {{ $event->readable ? 'text-success':'text-danger' }}">{{ $event->readable ? 'Evénement Lisible':'Presentation' }}</span>
+                                    <span class="col-auto">
+                                       <label class="form-check form-check-single form-switch">
+                                         <input class="form-check-input" {{ $event->readable ? 'checked':'' }} type="checkbox" name="readable">
+                                           <span class="text-danger error-text approved_error"></span>
+                                       </label>
+                                   </span>
+                                </label>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary"> Enregistrer l'événement</button>
                     </div>
                 </div>

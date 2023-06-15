@@ -23,6 +23,7 @@ return new class extends Migration
 
             $table->foreignId('user_id');
             $table->boolean('approved')->default(true);
+            $table->boolean('readable')->default(false)->nullable();
             $table->timestamps();
         });
     }

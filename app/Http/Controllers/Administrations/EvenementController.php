@@ -42,6 +42,11 @@ class EvenementController extends Controller
         } else {
             $validated['approved'] = $request->approved !== null;
         }
+        if ($request->readable === null) {
+            $validated['readable'] = 0;
+        } else {
+            $validated['readable'] = $request->readable !== null;
+        }
 
         if (!empty($request->input('tel'))){
             $validated['tel'] =$request->input('tel');
@@ -120,6 +125,11 @@ class EvenementController extends Controller
             $validated['approved'] = 0;
         } else {
             $validated['approved'] = $request->approved !== null;
+        }
+        if ($request->readable === null) {
+            $validated['readable'] = 0;
+        } else {
+            $validated['readable'] = $request->readable !== null;
         }
 
         if (!empty($request->input('tel'))){

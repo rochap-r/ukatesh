@@ -62,7 +62,7 @@
                         <p>
                             {!!  \Str::ucfirst(words($event->content,50)) !!}
                         </p>
-                        @if(!empty($event->lieu))
+                        @if($event->readable)
                             <a href="{{ route('event.show',$event) }}" class="default-btn btn">Decouvrez plus!<i class="flaticon-next"></i></a>
                         @endif
                     </div>

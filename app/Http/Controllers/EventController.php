@@ -8,7 +8,8 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events=Evenement::latest()->where('approved',1)->where('lieu','<>','')->with('author')->orderBy('id', 'DESC')->paginate(9);
+
+        $events=Evenement::latest()->where('approved',1)->where('readable',1)->with('author')->orderBy('id', 'DESC')->paginate(9);
         return view('ui.events.index',[
             'events'=>$events
         ]);

@@ -92,6 +92,20 @@
                                     </label>
                                 </div>
                             </div>
+
+                            <div class="mb-3">
+                                <div>
+                                    <label class="row">
+                                        <span class="col">Événement à lecture</span>
+                                        <span class="col-auto">
+                                       <label class="form-check form-check-single form-switch">
+                                         <input class="form-check-input" type="checkbox" name="readable">
+                                           <span class="text-danger error-text readable_error"></span>
+                                       </label>
+                                   </span>
+                                    </label>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-primary"> Enregistrer l'événement</button>
                         </div>
                     </div>
