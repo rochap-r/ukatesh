@@ -42,7 +42,8 @@
                <div class="row">
                    <div class="col-lg-8">
                        <div class="latest-news-left-content pr-20" style="background-image:url({{ LatestPost()? asset('storage/posts/'.LatestPost()->image->name) :'' }}); height:450px;">
-                           <div class="latest-news-simple-card">
+                           @if(LatestPost())
+                            <div class="latest-news-simple-card">
                                <div class="news-content">
                                    <div class="list">
                                        <ul>
@@ -54,6 +55,7 @@
                                    <a href="{{ route('blog.show',LatestPost()) }}" class="read-more-btn active">Lire plus...<i class="flaticon-next"></i></a>
                                </div>
                            </div>
+                           @endif
 
                            <div class="latest-news-card-area">
                                <h3>Dernières Actualités</h3>

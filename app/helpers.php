@@ -62,7 +62,7 @@ if (!function_exists('relatedPosts')){
     function relatedPosts(){
         return Post::where('approved',1)->with(['category', 'image'])
             ->whereHas('category', function ($query) {
-                $query->where('name', LatestPost()->category->name);
+                $query->where('name', LatestPost()?LatestPost()->category->name:'');
             })
             ->get();
     }
