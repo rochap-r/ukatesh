@@ -60,9 +60,11 @@
                     <div class="slider-content" style="max-width: 1024px;!important;">
                         <h1>{{ $event->title }}</h1>
                         <p>
-                            {!!  \Str::ucfirst(words($event->content,20)) !!}
+                            {!!  \Str::ucfirst(words($event->content,50)) !!}
                         </p>
-                        <a href="{{ route('event.show',$event) }}" class="default-btn btn">Decouvrez plus!<i class="flaticon-next"></i></a>
+                        @if(!empty($event->lieu))
+                            <a href="{{ route('event.show',$event) }}" class="default-btn btn">Decouvrez plus!<i class="flaticon-next"></i></a>
+                        @endif
                     </div>
                 </div>
             </div>
