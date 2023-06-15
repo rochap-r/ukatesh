@@ -37,7 +37,7 @@
             <div class="page-banner-content">
                 <h1>{{ $post->title }}</h1>
                 <ul>
-                    <li><a href="{{ route('home') }}">{{ siteInfos()->sitename }}</a></li>
+                    <li><a href="{{ route('home') }}">{{ siteInfos()->sigle }}</a></li>
                     <li><a href="{{ route('blog.index') }}">Actualités</a></li>
                     <li>Détail</li>
                 </ul>

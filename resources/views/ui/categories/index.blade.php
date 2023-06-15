@@ -28,7 +28,7 @@
             <div class="page-banner-content">
                 <h1>Nos dernières Actualités</h1>
                 <ul>
-                    <li><a href="{{ route('home') }}">{{ siteInfos()->sitename }}</a></li>
+                    <li><a href="{{ route('home') }}">{{ siteInfos()->sigle }}</a></li>
                     <li>Actualités</li>
                     <li>{{ $categorie->name }}</li>
                 </ul>

@@ -37,7 +37,7 @@
             <div class="page-banner-content">
                 <h1>{{ $event->title }}</h1>
                 <ul>
-                    <li><a href="{{ route('home') }}">{{ siteInfos()->sitename }}</a></li>
+                    <li><a href="{{ route('home') }}">{{ siteInfos()->sigle }}</a></li>
                     <li><a href="{{ route('event.index') }}">Événements</a></li>
                     <li>Détail</li>
                 </ul>
