@@ -15,7 +15,7 @@ class PostController extends Controller
         'title' => 'required|unique:posts,title,',
         'body' => 'required',
         'category_id' => 'required|exists:categories,id',
-        'image' => 'required|mimes:jpeg,jpg,png,webp|max:1024',
+        'image' => 'required|mimes:jpeg,jpg,png,webp|max:4100',
     ];
     public $messages = [
         'title.required' => "le titre d'article est obligatoire veuillez le saisir.",
@@ -24,7 +24,7 @@ class PostController extends Controller
         'category_id.required' => "Vous devez selection une catégorie.",
         'image.required' => "Veuillez choisir l'image d'article.",
         'image.mimes' => "JPG, JPEG, PNG et WEBP sont les formats d'images acceptés.",
-        'image.max' => "la taille maximum de l'image est de 1024.",
+        'image.max' => "la taille maximum de l'image est de 4100.",
     ];
 
     public function index()
