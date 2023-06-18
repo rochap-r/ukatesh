@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{asset('assets/leaflet/leaflet.css')}}">
     
     <style>
-        #maps {
+        #map{
             height: 400px; /* The height is 400 pixels */
             width: 100%; /* The width is the width of the web page */
         }
@@ -101,7 +101,7 @@
                 <div class="col-lg-6">
                     <div class="estemate-form">
                         <h2>Ukatesh Adresse Physique</h2>
-                        <div id="maps"></div>
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@
         var centerLatLng = L.latLng(-10.711992, 25.517761);
 
         // Créer une instance de la carte Leaflet
-        var map = L.map('maps').setView(centerLatLng, 16);
+        var map = L.map('map').setView(centerLatLng, 16);
 
         // Ajouter une couche de tuiles de Google Maps satellite à la carte
         var tileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
