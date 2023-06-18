@@ -21,12 +21,16 @@
     <meta name="twitter:image" content="{{ siteInfos()->getLogo() }}"/>
 @endsection
 @push('custom_css')
-    <script
+    <!--
+        <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK_9tj9A9o-Evqveq-MArqTB9LgSPnxWo&callback=initMap&v=weekly"
         defer
     ></script>
+    -->
+    <link rel="stylesheet" href="{{asset('assets/leaflet/leaflet.css')}}">
+    
     <style>
-        #map {
+        #maps {
             height: 400px; /* The height is 400 pixels */
             width: 100%; /* The width is the width of the web page */
         }
@@ -97,7 +101,7 @@
                 <div class="col-lg-6">
                     <div class="estemate-form">
                         <h2>Ukatesh Adresse Physique</h2>
-                        <div id="map"></div>
+                        <div id="maps"></div>
                     </div>
                 </div>
             </div>
@@ -242,6 +246,7 @@
 @endsection
 @push('custom_js')
 
+    <!--
     <script !src="">
         // Initialize and add the map
         function initMap() {
@@ -257,7 +262,7 @@
             const marker = new google.maps.Marker({
                 position: uluru,
                 map: map,
-                label: "UKatesh",
+                label: "Ukatesh",
                 title: "Université Téchnologique Kanyik Tesh",
                 draggable:false,
                 animation:google.maps.Animation.DROP,
@@ -271,5 +276,37 @@
 
         window.initMap = initMap;
     </script>
+    -->
+    <script src="{{asset('assets/leaflet/leaflet.js')}}"></script>
+    <script>
+        function initMap() {
+        // Définir les coordonnées pour le centre de la carte
+        var centerLatLng = L.latLng(-10.711992, 25.517761);
+
+        // Créer une instance de la carte Leaflet
+        var map = L.map('maps').setView(centerLatLng, 16);
+
+        // Ajouter une couche de tuiles de Google Maps satellite à la carte
+        var tileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+        }).addTo(map);
+
+        // Ajouter un écouteur d'événement pour l'événement load de la couche de tuiles
+        tileLayer.on('load', function() {
+            // Ajouter un marqueur pour le centre de la carte
+            var marker = L.marker(centerLatLng, {
+            title: "Université Téchnologique Kanyik Tesh",
+            draggable: false
+            }).addTo(map);
+
+            // Ajouter une popup au marqueur avec des informations sur l'université
+            marker.bindPopup("<p>Bienvenue à l'Université Téchnologique Kanyik Tesh</p>").openPopup();
+        });
+        }
+
+        // Appeler la fonction initMap() lorsque la page est chargée
+        window.addEventListener("load", initMap);
+            </script>
 @endpush
 
