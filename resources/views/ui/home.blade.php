@@ -59,7 +59,7 @@
     <div class="banner-area">
         <div class="hero-slider2 owl-carousel owl-theme">
             @forelse($events as $event)
-            <div class="slider-item " style="background-image:url({{ asset('storage/events/'.$event->image->name) }});">
+            <div class="slider-item " style="background-image:url({{ asset('storage/events/thumbnails/banner_'.$event->image->name) }});">
                 <div class="container-fluid">
                     <div class="slider-content" style="max-width: 1024px;!important;">
                         <h1>{{ $event->title }}</h1>
