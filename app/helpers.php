@@ -42,7 +42,7 @@ if (!function_exists('siteInfos')) {
 if (!function_exists('LatestPost')) {
     function LatestPost()
     {
-        return \App\Models\Post::latest()->first();
+        return \App\Models\Post::where('approved',1)->latest()->first();
     }
 }
 
