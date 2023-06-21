@@ -117,7 +117,7 @@
                     <ul>
                         @forelse(categories() as $categorie)
                             <li>
-                                <a href="javascript:void(0)">{{ $categorie->name }}<i class="ri-arrow-drop-right-fill"></i></a>
+                                <a href="{{ route('category.index',$categorie) }}">{{ $categorie->name }}<i class="ri-arrow-drop-right-fill"></i></a>
                             </li>
                         @empty
                             <li>
