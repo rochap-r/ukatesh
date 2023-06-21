@@ -44,7 +44,7 @@
 
                         
                         <li class="nav-item">
-                            <a href="{{ route('event.index') }}" class="nav-link dropdown-toggle">
+                            <a href="{{ route('event.index') }}" class="nav-link">
                                 Événements
                             </a>
                         </li>
