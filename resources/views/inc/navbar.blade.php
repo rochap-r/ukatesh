@@ -33,36 +33,22 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
-                                A propos d'Ukatesh
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link">En cours de développement</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
                             <a href="{{ route('rank.index') }}" class="nav-link">
                                 Fondation RANK
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle">
-                                Actualités
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="{{ route('blog.index') }}" class="nav-link">Ukatesh Actualités</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('event.index') }}" class="nav-link">Ukatesh Événements</a>
-                                </li>
-                            </ul>
+                            <li class="nav-link">
+                                <a href="{{ route('blog.index') }}" class="nav-link">Actualités</a>
+                            </li>
+                        </li>
 
+                        
+                        <li class="nav-item">
+                            <a href="{{ route('event.index') }}" class="nav-link dropdown-toggle">
+                                Événements
+                            </a>
                         </li>
 
                         <li class="nav-item">
