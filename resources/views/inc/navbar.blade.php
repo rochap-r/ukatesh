@@ -39,9 +39,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <li class="nav-link">
-                                <a href="{{ route('blog.index') }}" class="nav-link">Actualités</a>
-                            </li>
+                            <a href="{{ route('blog.index') }}" class="nav-link">Actualités</a>
                         </li>
 
                         
