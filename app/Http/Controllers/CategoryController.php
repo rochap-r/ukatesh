@@ -12,7 +12,7 @@ class CategoryController extends Controller
             ->where('approved',1)
             ->orderBy('id','desc')
             ->paginate(10);
-        $lastPost=$category->posts()->latest()->firstOrFail();
+        $lastPost=$category->posts()->where('approved',1)->latest()->firstOrFail();
         return view('ui.categories.index',[
             'posts'=>$posts,
             'categorie'=>$category,
