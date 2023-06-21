@@ -26,7 +26,7 @@
     <div class="page-banner-area" style="background-image:url('{{ asset(siteInfos()->getBg()) }}')">
         <div class="container">
             <div class="page-banner-content">
-                <h1>Les événements Universitaires</h1>
+                <h1>Les derniers événements </h1>
                 <ul>
                     <li><a href="{{ route('home') }}">{{ siteInfos()->sigle }}</a></li>
                     <li>Événements</li>
