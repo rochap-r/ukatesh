@@ -68,8 +68,8 @@
             <div class="col-md-12">
                 <div class="mb-3">
                     <label for="name" class="form-label">Section 3</label>
-                    <input type="text" id="visionTitle" class="form-control" name="visionTitle" placeholder="introduction à la section mission" wire:model='memberTitle'>
-                    <span class="text-danger">@error('visionTitle'){{$message}}@enderror</span>
+                    <input type="text" id="missionTitle" class="form-control" name="missionTitle" placeholder="introduction à la section mission" wire:model='missionTitle'>
+                    <span class="text-danger">@error('missionTitle'){{$message}}@enderror</span>
                 </div>
             </div>
             <div class="mb-3" wire:ignore>
