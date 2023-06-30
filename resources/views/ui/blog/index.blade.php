@@ -65,7 +65,7 @@
 
                                        <div class="single-news-card">
                                            <div class="news-img">
-                                               <a href="{{ route('blog.show',$post) }}"><img src="{{ asset('storage/posts/thumbnails/resized_'.$post->image->name) }}" alt="Image"></a>
+                                               <a href="{{ route('blog.show',$post) }}"><img src="{{ asset('storage/posts/thumbnails/thumb_'.$post->image->name) }}" alt="Image"></a>
                                            </div>
                                            <div class="news-content">
                                                <div class="list">
