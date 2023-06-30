@@ -233,7 +233,7 @@
         $('input[name="logo"]').ijaboViewer({
             preview: '#logo-image-preview',
             imageShape: 'square',
-            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            allowedExtensions: ['jpg', 'jpeg', 'png','webp'],
             onErrorShape: function(message, element) {
                 alert(message);
             },
@@ -263,7 +263,7 @@
         $('input[name="favicon48"]').ijaboViewer({
             preview: '#favicon48-image-preview',
             imageShape: 'square',
-            allowedExtensions: ['ico'],
+            allowedExtensions: ['ico','webp'],
             onErrorShape: function(message, element) {
                 alert(message);
             },
@@ -278,7 +278,7 @@
         $('input[name="favicon16"]').ijaboViewer({
             preview: '#favicon16-image-preview',
             imageShape: 'square',
-            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            allowedExtensions: ['jpg', 'jpeg', 'png','webp'],
             onErrorShape: function(message, element) {
                 alert(message);
             },
@@ -293,7 +293,7 @@
         $('input[name="appleicon18"]').ijaboViewer({
             preview: '#appleicon-image-preview',
             imageShape: 'square',
-            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            allowedExtensions: ['jpg', 'jpeg', 'png','webp'],
             onErrorShape: function(message, element) {
                 alert(message);
             },
@@ -308,7 +308,7 @@
         $('input[name="about_img"]').ijaboViewer({
             preview: '#about-image-preview',
             imageShape: 'rectangular',
-            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            allowedExtensions: ['jpg', 'jpeg', 'png','webp'],
             onErrorShape: function(message, element) {
                 alert(message);
             },
@@ -324,7 +324,7 @@
         $('input[name="project_img"]').ijaboViewer({
             preview: '#project-image-preview',
             imageShape: 'rectangular',
-            allowedExtensions: ['jpg', 'jpeg', 'png'],
+            allowedExtensions: ['jpg', 'jpeg', 'png','webp'],
             onErrorShape: function(message, element) {
                 alert(message);
             },
