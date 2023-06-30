@@ -17,7 +17,7 @@ class AboutController extends Controller
         $logo_path='assets/about/';
         $old_logo=$settings->getAttributes()['about_img'];
         $file=$request->file('about_img');
-        $filename=time().'_'.rand(1,1000).'_about_img.png';
+        $filename=time().'_'.rand(1,1000).'_about_img.webp';
 
         if($request->hasFile('about_img')){
             //File::ensureDirectoryExists(public_path($logo_path."resizes/"));
@@ -51,7 +51,7 @@ class AboutController extends Controller
         $logo_path='assets/about/';
         $old_logo=$settings->getAttributes()['project_img'];
         $file=$request->file('project_img');
-        $filename=time().'_'.rand(1,1000).'_project_img.png';
+        $filename=time().'_'.rand(1,1000).'_project_img.webp';
 
         if($request->hasFile('project_img')){
             //File::ensureDirectoryExists(public_path($logo_path."resizes/"));
