@@ -199,7 +199,7 @@
                     'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
                 ],
                 toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
-                    'bullist numlist outdent indent | link' +
+                    'bullist numlist outdent indent | link' ,
                     'forecolor backcolor',
                 content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif; font-size: 14px; -webkit-font-smoothing: antialiased; }',
                 setup: function (editor) {

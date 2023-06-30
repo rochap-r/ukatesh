@@ -14,7 +14,7 @@ class RankController extends Controller
         $logo_path='assets/rank/';
         $old_logo=$settings->getAttributes()['logo'];
         $file=$request->file('logo');
-        $filename=time().'_'.rand(1,1000).'_logo.png';
+        $filename=time().'_'.rand(1,1000).'_logo.webp';
 
         if($request->hasFile('logo')){
             if($old_logo!=null && File::exists(public_path($logo_path.$old_logo))){

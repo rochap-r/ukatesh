@@ -16,7 +16,7 @@ class GenConfigController extends Controller
         $logo_path='assets/images/img/';
         $old_logo=$settings->getAttributes()['bg_image'];
         $file=$request->file('bg_image');
-        $filename=time().'_'.rand(1,1000).'_bg_image.png';
+        $filename=time().'_'.rand(1,1000).'_bg_image.webp';
 
         if($request->hasFile('bg_image')){
             //File::ensureDirectoryExists(public_path($logo_path."resizes/"));
@@ -53,7 +53,7 @@ class GenConfigController extends Controller
         $logo_path='assets/favicons/';
         $old_logo=$settings->getAttributes()['logo'];
         $file=$request->file('logo');
-        $filename=time().'_'.rand(1,1000).'_logo.png';
+        $filename=time().'_'.rand(1,1000).'_logo.webp';
 
         if($request->hasFile('logo')){
             if($old_logo!=null && File::exists(public_path($logo_path.$old_logo))){
@@ -98,7 +98,7 @@ class GenConfigController extends Controller
         $logo_path='assets/favicons/';
         $old_logo=$settings->getAttributes()['favicon16'];
         $file=$request->file('favicon16');
-        $filename=time().'_'.rand(1,1000).'_favicon16.png';
+        $filename=time().'_'.rand(1,1000).'_favicon16.webp';
 
         if($request->hasFile('favicon16')){
             if($old_logo!=null && File::exists(public_path($logo_path.$old_logo))){
@@ -121,7 +121,7 @@ class GenConfigController extends Controller
         $logo_path='assets/favicons/';
         $old_logo=$settings->getAttributes()['appleicon18'];
         $file=$request->file('appleicon18');
-        $filename=time().'_'.rand(1,1000).'_appleicon18.png';
+        $filename=time().'_'.rand(1,1000).'_appleicon18.webp';
 
         if($request->hasFile('appleicon18')){
             if($old_logo!=null && File::exists(public_path($logo_path.$old_logo))){
