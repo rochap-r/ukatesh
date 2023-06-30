@@ -187,7 +187,7 @@ class PostController extends Controller
             ->save(storage_path('app/public/' . $thumbnail_path . 'thumb_' . $new_file));
         //resized image
         Image::make(storage_path('app/public/' . $folder . $new_file))
-            ->fit(500, 350)
+            ->fit(840, 450)
             ->save(storage_path('app/public/' . $thumbnail_path . 'resized_' . $new_file));
     }
 }

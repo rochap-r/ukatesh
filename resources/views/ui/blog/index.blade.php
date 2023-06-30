@@ -35,13 +35,13 @@
         </div>
     </div>
 
-   <div class="container" style="margin-bottom: 40%;">
+   <div class="container">
 
        <div class="latest-news-area pt-100 pb-70" >
            <div class="container">
                <div class="row">
                    <div class="col-lg-8">
-                       <div class="latest-news-left-content pr-20" style="background-image:url({{ LatestPost()? asset('storage/posts/'.LatestPost()->image->name) :'' }}); height:450px;">
+                       <div class="latest-news-left-content py-20" style="background-image:url({{ LatestPost()? asset('storage/posts/thumbnails/resized_'.LatestPost()->image->name) :'' }});background-repeat:no-repeat;">
                            @if(LatestPost())
                             <div class="latest-news-simple-card">
                                <div class="news-content">
