@@ -86,8 +86,8 @@
 
             <div class="modal-body">
                 <a href=" {{ route('home') }}">
-                    <img src="{{ asset('assets/favicons/logo.png')}}" width="50" class="main-logo" alt="logo">
-                    <img src="{{ asset('assets/favicons/logo.png')}}" width="50" class="white-logo" alt="logo">
+                    <img src="{{ siteInfos()->getLogo() }}" width="50" class="main-logo" alt="logo">
+                    <img src="{{ siteInfos()->getLogo() }}" width="50" class="white-logo" alt="logo">
                     <span class="label">{{ siteInfos()->sigle }}</span>
                     <hr class="line-height">
                 </a>
