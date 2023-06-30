@@ -106,7 +106,7 @@
             $('input[type="file"][name="image"]').ijaboViewer({
                 preview:'#image-previewer',
                 imageShape:'rectangular',
-                allowedExtensions:['jpg','jpeg','png'],
+                allowedExtensions:['jpg','jpeg','png','webp'],
                 onErrorShape:function (message,element) {
 
                 },
