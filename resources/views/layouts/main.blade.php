@@ -207,7 +207,7 @@
                     </div>
                     <div class="col-lg-6 col-md-8">
                         <div class="copy">
-                            <p>Copyright &copy; <script> document.write(new Date().getFullYear())</script>
+                            <p>Copyright &copy; <div id="year"></div>
                                 <a href="." class="link-secondary"><b>{{ siteInfos()->sitename }}</b></a>.
                                 Tous les droits sont réservés.</p>
                         </div>
@@ -216,7 +216,7 @@
             </div>
         </div>
     </div>
-    <!--End Copyright Area-->
+    <!--End Copyright Area-->    
 
     <!-- Start Go Top Area -->
     <div class="go-top">
@@ -265,6 +265,8 @@
         loop: true,
         easing: 'linear'
     });
+
+    document.getElementById("year").innerHTML = new Date().getFullYear();
 
 </script>
 
