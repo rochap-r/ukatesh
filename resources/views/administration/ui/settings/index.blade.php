@@ -1,7 +1,7 @@
 @extends('administration.ui.app')
 @section('title','Ukatesh Paramètres Généraux')
 @push('style')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.4.1/tinymce.min.js" integrity="sha512-in/06qQzsmVw+4UashY2Ta0TE3diKAm8D4aquSWAwVwsmm1wLJZnDRiM6e2lWhX+cSqJXWuodoqUq91LlTo1EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tiny.cloud/1/e5vk6xm2seh2vjfsd7n6w7607sng1wvlfh5rinrgg5rpdmor/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 @endpush
 
 @section('content')
@@ -199,7 +199,7 @@
                     'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor',
                 ],
                 toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
-                    'bullist numlist outdent indent | link' ,
+                    'bullist numlist outdent indent | link '+
                     'forecolor backcolor',
                 content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif; font-size: 14px; -webkit-font-smoothing: antialiased; }',
                 setup: function (editor) {
