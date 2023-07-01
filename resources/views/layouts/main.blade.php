@@ -208,7 +208,8 @@
                     <div class="col-lg-6 col-md-8">
                         <div class="copy">
                             <p>Copyright &copy; <span id="year"></span>
-                                <a href="." class="link-secondary"><b>{{ siteInfos()->sitename }}</b></a>.</p>
+                                <a href="." class="link-secondary"><b>{{ siteInfos()->sigle }}</b></a>.
+                                Tous les droits sont réservés.</p>
                         </div>
                     </div>
                 </div>
