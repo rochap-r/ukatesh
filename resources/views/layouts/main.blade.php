@@ -216,7 +216,7 @@
             </div>
         </div>
     </div>
-    <!--End Copyright Area-->    
+    <!--End Copyright Area-->
 
     <!-- Start Go Top Area -->
     <div class="go-top">

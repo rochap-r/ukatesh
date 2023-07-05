@@ -94,15 +94,15 @@ class Users extends Component
             if ($result) {
                 Mail::send('emails.new-user_email-template', $data, function ($message) use ($user_email, $user_name) {
                     $message->to($user_email, $user_name)
-                        ->from(env('MAIL_USERNAME'), env('APP_NAME'))
+                        ->from('contact@ukatesh.org', env('APP_NAME'))
                         ->subject('Création du Compte Utilisateur');
                 });
                 $this->showToastr('Un nouveau user a été créé avec succès', 'success');
                 $this->name = $this->sname = $this->lname = $this->phone =$this->role =$this->fonction = $this->email = $this->type_user_id = $this->gender = null;
                 Mail::send('emails.new-user-create', $data, function ($message) use ($admin_email, $appName) {
                     $message->to($admin_email, $appName)
-                        //->cc(GenConfig::find(1)->email)
-                        ->from(env('MAIL_USERNAME'), env('APP_NAME'))
+                        //->cc(GenConfig::find(1)->email) env('MAIL_USERNAME')
+                        ->from('contact@ukatesh.org', env('APP_NAME'))
                         ->subject('Adhésion d\'un nouveau utilisateur');
                 });
                 $this->dispatchBrowserEvent('hide_add_user_modal');

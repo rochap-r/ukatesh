@@ -28,7 +28,7 @@
     ></script>
     -->
     <link rel="stylesheet" href="{{asset('assets/leaflet/leaflet.css')}}">
-    
+
     <style>
         #map{
             height: 400px; /* The height is 400 pixels */
@@ -49,7 +49,7 @@
                 float: left;
             }
         }
-        
+
 
 
     </style>
@@ -310,4 +310,3 @@
         window.addEventListener("load", initMap);
             </script>
 @endpush
-
