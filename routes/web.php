@@ -47,6 +47,8 @@ Route::get('/categories.index/{category:slug}',[\App\Http\Controllers\CategoryCo
 Route::get('event.index',[\App\Http\Controllers\EventController::class,'index'])->name('event.index');
 Route::get('/event.show/{event:slug}',[\App\Http\Controllers\EventController::class,'show'])->name('event.show');
 
+//galéries
+Route::get('galery.index',[\App\Http\Controllers\GalleryController::class,'index'])->name('galery.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -88,8 +90,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','check_permissions'])
     Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
     Route::get('/gallery.create',[GalleryController::class,'create'])->name('gallery.create');
     Route::post('/gallery.store',[GalleryController::class,'store'])->name('gallery.store');
-    Route::get('/gallery.edit',[GalleryController::class,'edit'])->name('gallery.edit');
-    Route::post('/gallery.update',[GalleryController::class,'update'])->name('gallery.update');
+    Route::get('/gallery.edit/{id}',[GalleryController::class,'edit'])->name('gallery.edit');
+    Route::post('/gallery.update{galery}',[GalleryController::class,'update'])->name('gallery.update');
 
     //foundation Rank routes
     Route::get('/rank',[RankController::class,'index'])->name('rank.index');

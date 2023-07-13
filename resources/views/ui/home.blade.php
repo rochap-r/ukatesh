@@ -157,38 +157,43 @@
     <!-- About -->
 
     <!-- Section galerie-->
-    <!--
+
     <div class="ptb-50 bg-f4EEEE" id="galery-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    {!! "" /*about()->galery*/ !!}
-                    <a href="javascript:void(0)" class="btn btn-primary">Découvrez plus!</a>
+                    {!!  about()->galery !!}
+                    <a href="{{ route('galery.index')}}" class="btn btn-primary">Découvrez plus!</a>
                 </div>
                 <div class="col-md-6">
+                    
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ ''/*asset(siteInfos()->getBg())*/ }}" alt="Ukatesh Campus 1" class="d-block w-100">
-                            </div>
+                            @forelse(LatestGaleries() as $key => $galerie)
+                        
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('storage/galeries/thumbnails/thumb_'.$galerie->name) }}" alt="{{ $galerie->title }}" class="d-block w-100">
+                                </div>
+                            @empty
                             <div class="carousel-item">
-                                <img src="{{'' /*asset(siteInfos()->getBg())*/ }}" alt="Ukatesh Campus 2" class="d-block w-100">
+                                <span class="text-danger">aucune image disponible dans la galérie</span>    
                             </div>
+                            @endforelse
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden">Précedent</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden">Suivant</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    -->
+
     <!-- End Section galerie-->
 
 

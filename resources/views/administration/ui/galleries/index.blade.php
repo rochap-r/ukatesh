@@ -34,7 +34,35 @@
         </div>
 
         {{--    Il faut prendre la structure sur tabler.io de la galerie    --}}
+        <div class="container py-4">
+            <div class="row">
+              @forelse ($galeries as $galerie)
+              <div class="col-md-4 mb-2">
+                <div class="card">
+                  <div class="position-relative">
+                    <img src="{{ asset('storage/galeries/thumbnails/thumb_'.$galerie->name)}}" class="card-img-top" alt="{{ $galerie->name}}">
+                    <span class="badge badge-lg bg-success position-absolute top-0 start-0 m-3">{{ $galerie->type->name}}</span>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $galerie->title }}</h5>
+                    <h5 class="card-title">
+                      <a href="{{ route('admin.gallery.edit',$galerie)}}" class="btn btn-danger">Editer</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              @empty
+                <p class="text-danger lead">Aucune Image disponible dans la galérie</p>
+              @endforelse
+            </div>
+            <div class=" mb-5">
+              {{ $galeries->links() }}
+          </div>
+          </div>
+          
+        <!--fin structure -->
 
+    
     @endsection
     @push('script')
         {{-- JS complementaires --}}

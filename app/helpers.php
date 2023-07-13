@@ -46,6 +46,14 @@ if (!function_exists('LatestPost')) {
     }
 }
 
+/** lastgalerie */
+if (!function_exists('LatestGaleries')) {
+    function LatestGaleries()
+    {
+        return \App\Models\Galery::latest()->take(6)->get();
+    }
+}
+
 
 /**
  * categories globales
