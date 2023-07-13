@@ -92,7 +92,7 @@
                     <h3 class="text-danger lead">Aucune photo n'est disponible</h3>
                 </div>
             </div>           
-          @endforeach
+          @endforelse
         </div>
       </div>
 
