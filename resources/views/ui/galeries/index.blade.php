@@ -89,7 +89,7 @@
             @empty
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <h3 class="text-danger lead">Aucune photo n'est disponible</h3>
+                    <span class="text-danger lead">Aucune photo n'est disponible</span>
                 </div>
             </div>           
           @endforelse
