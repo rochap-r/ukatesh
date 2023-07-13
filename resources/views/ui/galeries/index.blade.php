@@ -65,7 +65,7 @@
     <div class="container my-4">
         <h1 class="py-2">Ukatesh Galérie d'images</h1>
         <div class="row">
-          @foreach ($galeries as $galerie)
+          @forelse ($galeries as $galerie)
             <div class="col-md-6">
               <div class="card mb-4">
                 <div style="position: relative;">
@@ -86,6 +86,12 @@
               </div>
               <div class="row">
             @endif
+            @empty
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <h3 class="text-danger lead">Aucune photo n'est disponible</h3>
+                </div>
+            </div>           
           @endforeach
         </div>
       </div>
