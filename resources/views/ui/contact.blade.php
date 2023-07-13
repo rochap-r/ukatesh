@@ -4,6 +4,23 @@
 @section('title','Nous Contacter')
 @section('meta')
     <!--balise meta ici-->
+    <meta name="robots" content="index,follow"/>
+    <meta name="title" content="{{ siteInfos()->sitename }}"/>
+    <meta name="description" content="{{ siteInfos()->description }}"/>
+    <meta name="author" content="{{ siteInfos()->sitename }}"/>
+    <link rel="canonical" href="{{ \Illuminate\Support\Facades\Request::root() }}"/>
+    <meta property="og:title" content="{{ siteInfos()->sitename }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="{{ siteInfos()->description }}"/>
+    <meta property="og:url" content="{{ \Illuminate\Support\Facades\Request::root() }}"/>
+    <meta property="og:image" content="{{ siteInfos()->getLogo() }}"/>
+    <meta name="twitter:domain" content="{{ \Illuminate\Support\Facades\Request::root() }}"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" property="og:title" itemprop="name"  content="{{ siteInfos()->sitename }}"/>
+    <meta name="twitter:description" property="og:description" itemprop="description"  content="{{ siteInfos()->description }}"/>
+    <meta name="twitter:image" content="{{ siteInfos()->getLogo() }}"/>
+
+    <meta name="keywords" content=" Enseignement, Formation, education">
 @endsection
 @push('custom_css') @endpush
 @section('content')

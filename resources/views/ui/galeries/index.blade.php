@@ -4,7 +4,6 @@
 @section('title','Ukatesh Galérie Photos')
 @section('meta')
     <!--balise meta ici-->
-    <!--balise meta ici-->
     <meta name="robots" content="index,follow"/>
     <meta name="title" content="{{ siteInfos()->sitename }}"/>
     <meta name="description" content="{{ siteInfos()->description }}"/>
